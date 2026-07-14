@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Waterline — Pool Water Console</title>
+<title>Waterline: Pool Water Console</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@ body{
 h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em}
 a{color:var(--aqua)}
 .wrap{max-width:1280px;margin:0 auto;padding:26px 22px 80px}
-
+ 
 header{position:relative;overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius);padding:22px 24px;margin-bottom:22px;background:linear-gradient(120deg,#0c2a33 0%,#0a2129 60%,#0d2f38 100%)}
 header::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:180%;background:repeating-linear-gradient(76deg, transparent 0 22px, rgba(63,224,208,.05) 22px 24px),repeating-linear-gradient(-72deg, transparent 0 30px, rgba(74,163,255,.045) 30px 32px);transform:translateX(0);animation:drift 22s linear infinite;pointer-events:none}
 @keyframes drift{to{transform:translateX(-46px)}}
@@ -39,7 +39,7 @@ header::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:180
 .wordmark b{color:var(--aqua)}
 .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
 .subhead{position:relative;margin-top:8px;color:var(--ink-2);max-width:62ch;font-size:14px}
-
+ 
 .grid{display:grid;grid-template-columns:388px 1fr;gap:22px;align-items:start}
 @media (max-width:940px){.grid{grid-template-columns:1fr}}
 .panel{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius)}
@@ -50,41 +50,39 @@ header::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:180
 .panel-head h2{font-size:14px;letter-spacing:.02em;text-transform:uppercase;font-weight:600;color:var(--ink)}
 .panel-head .note{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.06em}
 .panel-body{padding:16px 18px}
-
+ 
 .field{margin-bottom:14px}
 .field:last-child{margin-bottom:0}
 label.lab{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .hint{font-size:11.5px;color:var(--ink-3);margin-top:4px;font-family:var(--mono)}
-input[type=number],select{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;color:var(--ink);font-family:var(--mono);font-size:15px;padding:9px 11px;outline:none;transition:border-color .15s, box-shadow .15s}
-input[type=number]:focus,select:focus{border-color:var(--aqua-dim);box-shadow:0 0 0 3px rgba(63,224,208,.13)}
+input[type=number],input[type=date],select{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;color:var(--ink);font-family:var(--mono);font-size:15px;padding:9px 11px;outline:none;transition:border-color .15s, box-shadow .15s}
+input[type=number]:focus,input[type=date]:focus,select:focus{border-color:var(--aqua-dim);box-shadow:0 0 0 3px rgba(63,224,208,.13)}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{opacity:.4}
+input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.85);cursor:pointer}
 select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-
+ 
 .seg{display:flex;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;padding:3px;gap:3px}
 .seg button{flex:1;background:transparent;border:0;color:var(--ink-2);font-family:var(--mono);font-size:12px;padding:7px 4px;border-radius:6px;cursor:pointer;letter-spacing:.03em;transition:.15s}
 .seg button.on{background:var(--surface-2);color:var(--aqua);box-shadow:inset 0 0 0 1px var(--line)}
 .seg button:hover:not(.on){color:var(--ink)}
-
+ 
 .divider{height:1px;background:var(--line-soft);margin:16px 0}
 .mini-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin:2px 0 10px;display:flex;align-items:center;gap:8px}
 .mini-lab .dot{width:6px;height:6px;border-radius:50%;background:var(--aqua-dim)}
 .volout{font-family:var(--mono);background:var(--bg-2);border:1px dashed var(--line);border-radius:9px;padding:10px 12px;display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
 .volout small{color:var(--ink-3);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 .volout b{color:var(--aqua);font-size:18px;font-weight:600}
-
-/* swim safety slider */
+ 
+/* water sync slider */
 .verdict{padding:18px;border-bottom:1px solid var(--line-soft)}
 .swim-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:11px}
 .swim-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-.swim-read{font-size:15px;font-weight:600}
+.swim-read{font-family:var(--mono);font-size:20px;font-weight:600}
 .swim-meter{position:relative;height:16px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(90deg,#cf7d6a 0%,#dc9a55 34%,#4fbfae 66%,var(--aqua) 100%)}
 .swim-needle{position:absolute;top:-4px;width:3px;height:24px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.6);transform:translateX(-50%)}
 .swim-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:6px}
-.verdict-reasons{margin:13px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
-.verdict-reasons li{font-size:12.5px;color:var(--ink-2);font-family:var(--mono);display:flex;gap:8px;align-items:flex-start}
-.verdict-reasons li::before{content:"›";color:var(--ink-3)}
-
+ 
 /* LSI */
 .lsi-card{padding:18px}
 .lsi-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;gap:16px;flex-wrap:wrap}
@@ -97,7 +95,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .lsi-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:6px}
 .lsi-note{margin-top:12px;font-size:13px;color:var(--ink-2)}
 .lsi-est{margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--warn)}
-
+ 
 /* gauges */
 .gauges{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
 @media (max-width:560px){.gauges{grid-template-columns:1fr}}
@@ -116,7 +114,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .gauge-fix{font-family:var(--mono);font-size:11px;margin-top:7px;min-height:1em;font-weight:500}
 .tempchip{background:var(--bg-2);border:1px solid var(--line-soft);border-radius:11px;padding:13px 14px;display:flex;flex-direction:column;justify-content:center}
 .tempchip .gauge-read{font-size:24px}
-
+ 
 /* fix list */
 .dose-list{padding:8px 18px 18px}
 .dose{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line-soft)}
@@ -131,7 +129,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .allgood{padding:26px 18px;text-align:center;color:var(--ink-2)}
 .allgood .big{font-family:var(--mono);font-size:22px;color:var(--aqua);letter-spacing:.02em;margin-bottom:6px}
 .mode-note{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);padding:12px 18px 0}
-
+ 
 /* analytics */
 .analytics{padding:8px 18px 18px}
 .insight{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line-soft)}
@@ -140,7 +138,27 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .insight .c{flex:1;min-width:0}
 .insight .h{font-weight:600;font-size:14px;margin-bottom:3px}
 .insight .b{font-size:13px;color:var(--ink-2);line-height:1.55}
-
+ 
+/* history / trends */
+.hist-controls{display:flex;flex-direction:column;gap:12px}
+.hist-btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:.04em;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:8px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
+.btn:hover{border-color:var(--aqua-dim);color:var(--aqua)}
+.btn.ghost{background:transparent;color:var(--ink-2)}
+.btn.primary{background:rgba(63,224,208,.14);border-color:rgba(63,224,208,.45);color:var(--aqua)}
+.btn.primary:hover{background:rgba(63,224,208,.2)}
+.file-btn input{display:none}
+.hist-note{font-size:11.5px;color:var(--ink-3);font-family:var(--mono);line-height:1.6}
+.hist-empty{padding:22px 4px;color:var(--ink-3);font-size:13px;font-family:var(--mono);text-align:center;border:1px dashed var(--line);border-radius:10px;margin-top:14px}
+.chart-empty2{color:var(--ink-3);font-size:12.5px;font-family:var(--mono);padding:20px 4px;text-align:center;border:1px dashed var(--line);border-radius:10px}
+.hist-table-wrap{overflow-x:auto;margin-top:10px;border:1px solid var(--line-soft);border-radius:10px}
+table.hist-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:12px}
+table.hist-table th{text-align:left;color:var(--ink-3);font-weight:500;padding:8px 10px;border-bottom:1px solid var(--line-soft);white-space:nowrap;text-transform:uppercase;letter-spacing:.06em;font-size:10.5px}
+table.hist-table td{padding:7px 10px;border-bottom:1px solid var(--line-soft);color:var(--ink-2);white-space:nowrap}
+table.hist-table tr:last-child td{border-bottom:0}
+table.hist-table td.del{cursor:pointer;color:var(--ink-3);text-align:center}
+table.hist-table td.del:hover{color:var(--high)}
+ 
 /* info cards */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
 @media (max-width:940px){.cards{grid-template-columns:1fr}}
@@ -158,7 +176,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .safety li{margin-bottom:8px;font-size:13px;color:var(--ink-2)}
 .safety b{color:var(--warn)}
 .footer-note{margin-top:26px;font-size:12px;color:var(--ink-3);font-family:var(--mono);line-height:1.7;border-top:1px solid var(--line-soft);padding-top:16px}
-
+ 
 .hide{display:none !important}
 :focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
 @media (prefers-reduced-motion:reduce){header::before{animation:none}}
@@ -166,22 +184,22 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 </head>
 <body>
 <div class="wrap">
-
+ 
   <header>
     <div class="brandline">
       <span class="wordmark">WATER<b>LINE</b></span>
       <span class="tag">Pool Chemistry Console</span>
     </div>
-    <p class="subhead">Enter your daily probe readings — pH, chlorine, ORP, temp — for an instant read on what's going on and how to fix it. Switch to Full test when you've run the whole panel.</p>
+    <p class="subhead">Enter your daily probe readings: pH, chlorine, ORP, and temp, for a quick read on what's going on and how to fix it. Switch to Full test when you've run the whole panel, and log readings over time to see how things are trending.</p>
   </header>
-
+ 
   <div class="grid">
-
+ 
     <!-- ============ INPUTS ============ -->
     <div class="panel inputs">
       <div class="panel-head"><span class="idx">IN</span><h2>Readings &amp; Setup</h2></div>
       <div class="panel-body">
-
+ 
         <!-- VOLUME -->
         <div class="field">
           <label class="lab">Pool volume</label>
@@ -192,7 +210,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
         </div>
         <div id="vol-enter" class="field">
           <input type="number" id="vol_gal" value="20000" min="100" step="100">
-          <div class="hint" id="vol_liters">≈ 75,700 L</div>
+          <div class="hint" id="vol_liters">approx 75,700 L</div>
         </div>
         <div id="vol-calc" class="hide">
           <div class="field">
@@ -207,9 +225,9 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
             <div class="field"><label class="lab">Shallow (ft)</label><input type="number" id="depthS" value="3.5" step="0.5"></div>
             <div class="field"><label class="lab">Deep (ft)</label><input type="number" id="depthD" value="8" step="0.5"></div>
           </div>
-          <div class="volout"><small>Computed volume</small><b id="vol_calc_out">— gal</b></div>
+          <div class="volout"><small>Computed volume</small><b id="vol_calc_out">gal</b></div>
         </div>
-
+ 
         <div class="divider"></div>
         <div class="mini-lab"><span class="dot"></span>Setup</div>
         <div class="field">
@@ -229,7 +247,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
             <option value="calhypo">Cal-hypo (granular)</option>
           </select>
         </div>
-
+ 
         <div class="divider"></div>
         <div class="mini-lab"><span class="dot"></span>Test type</div>
         <div class="field">
@@ -239,7 +257,7 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
           </div>
           <div class="hint">Daily = probe readings. Full = complete panel.</div>
         </div>
-
+ 
         <!-- DAILY READINGS -->
         <div class="row2">
           <div class="field"><label class="lab">pH</label><input type="number" id="pH" value="6.9" step="0.1"></div>
@@ -247,9 +265,9 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
         </div>
         <div class="row2">
           <div class="field"><label class="lab">ORP (mV)</label><input type="number" id="orp" value="720" step="5"><div class="hint">Sanitizer strength</div></div>
-          <div class="field"><label class="lab">Water °F</label><input type="number" id="temp" value="82" step="1"></div>
+          <div class="field"><label class="lab">Water F</label><input type="number" id="temp" value="82" step="1"></div>
         </div>
-
+ 
         <!-- ADVANCED READINGS -->
         <div id="adv-readings" class="hide">
           <div class="divider"></div>
@@ -260,101 +278,158 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
           </div>
           <div class="row2">
             <div class="field"><label class="lab">Cyanuric (ppm)</label><input type="number" id="cya" value="50" step="5"></div>
-            <div class="field"><label class="lab">Combined Cl (ppm)</label><input type="number" id="cc" value="0" step="0.1"><div class="hint">Total − Free</div></div>
+            <div class="field"><label class="lab">Combined Cl (ppm)</label><input type="number" id="cc" value="0" step="0.1"><div class="hint">Total minus Free</div></div>
           </div>
           <div class="row2">
             <div class="field" id="salt-field"><label class="lab">Salt (ppm)</label><input type="number" id="salt" value="3000" step="100"></div>
             <div class="field"><label class="lab">TDS (ppm)</label><input type="number" id="tds" value="1000" step="100"></div>
           </div>
         </div>
-
+ 
       </div>
     </div>
-
+ 
     <!-- ============ DASHBOARD ============ -->
     <div>
-
+ 
       <!-- 01 WATER STATUS -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">01</span><h2>Water Status</h2></div>
         <div class="verdict" id="verdict"></div>
         <div class="lsi-card">
           <div class="lsi-top">
-            <div><div class="lsi-val" id="lsi_val">—</div><div class="lsi-lab">SATURATION INDEX · SCALE / CORROSION BALANCE</div></div>
-            <div class="lsi-state" id="lsi_state">—</div>
+            <div><div class="lsi-val" id="lsi_val">-</div><div class="lsi-lab">SATURATION INDEX / SCALE-CORROSION BALANCE</div></div>
+            <div class="lsi-state" id="lsi_state">-</div>
           </div>
           <div class="lsi-meter"><div class="lsi-band" id="lsi_band"></div><div class="lsi-needle" id="lsi_needle"></div></div>
-          <div class="lsi-scale"><span>−1.0 corrosive</span><span>−0.3</span><span>0.0 balanced</span><span>+0.3</span><span>+1.0 scaling</span></div>
+          <div class="lsi-scale"><span>-1.0 corrosive</span><span>-0.3</span><span>0.0 balanced</span><span>+0.3</span><span>+1.0 scaling</span></div>
           <div class="lsi-note" id="lsi_note"></div>
-          <div class="lsi-est hide" id="lsi_est">Estimated from your last full-panel values — run a Full test to refresh balance.</div>
+          <div class="lsi-est hide" id="lsi_est">Estimated from your last full-panel values. Run a Full test to refresh balance.</div>
         </div>
       </div>
-
+ 
       <!-- 02 PARAMETER STATUS -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">02</span><h2>Parameter Status &amp; Ideal Ranges</h2></div>
         <div class="gauges" id="gauges"></div>
       </div>
-
+ 
       <!-- 03 FIXES -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">03</span><h2>Get Back in Range</h2><span class="note" id="fix-order"></span></div>
         <div id="mode-note" class="mode-note hide"></div>
         <div id="dose-list" class="dose-list"></div>
       </div>
-
+ 
       <!-- 04 ANALYTICS -->
-      <div class="panel">
+      <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">04</span><h2>Advanced Analytics</h2><span class="note">likely root causes</span></div>
         <div class="analytics" id="analytics"></div>
       </div>
-
-      <!-- INFO CARDS -->
-      <div class="cards">
-        <div class="panel">
-          <div class="panel-head"><span class="idx">05</span><h2>Chlorine / CYA &amp; Shock</h2></div>
-          <div class="panel-body" id="fccya"></div>
-        </div>
-        <div class="panel">
-          <div class="panel-head"><span class="idx">06</span><h2>How the chemicals interact</h2></div>
-          <div class="panel-body relations">
-            <div class="r"><span class="ic">TA→pH</span><span><b>Alkalinity buffers pH.</b> Fix alkalinity first — with it out of range, pH won't hold and you'll chase it every visit.</span></div>
-            <div class="r"><span class="ic">ACID</span><span><b>Muriatic acid lowers pH <em>and</em> alkalinity together.</b> To drop alkalinity without tanking pH, add acid in one spot, then aerate.</span></div>
-            <div class="r"><span class="ic">ASH</span><span><b>Soda ash raises pH <em>and</em> nudges alkalinity up.</b> If only alkalinity is low, use baking soda — it lifts alkalinity with a much smaller pH bump.</span></div>
-            <div class="r"><span class="ic">pH→ORP</span><span><b>ORP is pH-dependent.</b> Low pH inflates the ORP reading, high pH deflates it — so ORP can look fine while free chlorine is actually low.</span></div>
-            <div class="r"><span class="ic">CYA↔Cl</span><span><b>More stabilizer means you must hold more chlorine</b> — and it suppresses ORP. Keep free chlorine near 7.5% of the CYA reading.</span></div>
-            <div class="r"><span class="ic">pH→Cl</span><span><b>High pH weakens chlorine.</b> Above pH 8.0 chlorine loses roughly half its punch — balance pH before blaming the sanitizer.</span></div>
+ 
+      <!-- 05 TRENDS & HISTORY -->
+      <div class="panel">
+        <div class="panel-head"><span class="idx">05</span><h2>Trends &amp; History</h2><span class="note">import past tests to see how things are moving</span></div>
+        <div class="panel-body">
+          <div class="hist-controls">
+            <div class="field" style="max-width:220px">
+              <label class="lab">Date to log</label>
+              <input type="date" id="hist_date">
+            </div>
+            <div class="hist-btns">
+              <button class="btn primary" id="hist_log">Log current reading</button>
+              <label class="btn file-btn">Import CSV<input type="file" id="hist_import" accept=".csv"></label>
+              <button class="btn" id="hist_export">Export CSV</button>
+              <button class="btn ghost" id="hist_sample">Load sample data</button>
+              <button class="btn ghost" id="hist_clear">Clear history</button>
+            </div>
+            <div class="hist-note">Logging saves whatever is currently in the Readings panel, tagged with this date. Logging again on the same date updates that entry instead of duplicating it. CSV columns: date, pH, fc, orp, ta, ch, cya, salt, tds, cc, temp. Any subset works, and this is also the format Export CSV produces, so exporting and re-importing later is how your log carries over between sessions.</div>
+          </div>
+ 
+          <div id="hist_empty" class="hist-empty">No history yet. Log today's reading, import a CSV of past tests, or load sample data to see how this section works.</div>
+ 
+          <div id="hist_content" class="hide">
+            <div class="field" style="max-width:260px;margin-top:16px">
+              <label class="lab">Chart metric</label>
+              <select id="hist_metric">
+                <option value="fc">Free Chlorine</option>
+                <option value="pH">pH</option>
+                <option value="orp">ORP</option>
+                <option value="ta">Alkalinity</option>
+                <option value="ch">Calcium Hardness</option>
+                <option value="cya">Cyanuric Acid</option>
+              </select>
+            </div>
+            <div id="hist_chart_wrap" style="margin-top:14px"></div>
+ 
+            <div class="divider"></div>
+            <div class="mini-lab"><span class="dot"></span>Trend notes</div>
+            <div id="hist_insights" class="analytics" style="padding:0"></div>
+ 
+            <div class="divider"></div>
+            <div class="mini-lab"><span class="dot"></span>Log (<span id="hist_count">0</span> entries)</div>
+            <div class="hist-table-wrap"><table class="hist-table" id="hist_table"></table></div>
           </div>
         </div>
       </div>
-
+ 
+      <!-- INFO CARDS -->
+      <div class="cards">
+        <div class="panel">
+          <div class="panel-head"><span class="idx">06</span><h2>Chlorine / CYA &amp; Shock</h2></div>
+          <div class="panel-body" id="fccya"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span class="idx">07</span><h2>How the chemicals interact</h2></div>
+          <div class="panel-body relations">
+            <div class="r"><span class="ic">TA-pH</span><span><b>Alkalinity buffers pH.</b> Fix alkalinity first. With it out of range, pH won't hold and you'll chase it every visit.</span></div>
+            <div class="r"><span class="ic">ACID</span><span><b>Muriatic acid lowers pH and alkalinity together.</b> To drop alkalinity without tanking pH, add acid in one spot, then aerate.</span></div>
+            <div class="r"><span class="ic">ASH</span><span><b>Soda ash raises pH and nudges alkalinity up.</b> If only alkalinity is low, use baking soda instead. It lifts alkalinity with a much smaller pH bump.</span></div>
+            <div class="r"><span class="ic">pH-ORP</span><span><b>ORP is pH-dependent.</b> Low pH inflates the ORP reading, and high pH deflates it, so ORP can look fine while free chlorine is actually low.</span></div>
+            <div class="r"><span class="ic">CYA-Cl</span><span><b>More stabilizer means you must hold more chlorine,</b> and it also suppresses ORP. Keep free chlorine near 7.5% of the CYA reading.</span></div>
+            <div class="r"><span class="ic">pH-Cl</span><span><b>High pH weakens chlorine.</b> Above pH 8.0 chlorine loses roughly half its punch, so balance pH before blaming the sanitizer.</span></div>
+          </div>
+        </div>
+      </div>
+ 
       <!-- SAFETY -->
       <div class="panel" style="margin-top:22px">
-        <div class="panel-head"><span class="idx">07</span><h2>Handling rules</h2></div>
+        <div class="panel-head"><span class="idx">08</span><h2>Handling rules</h2></div>
         <div class="panel-body">
           <ul class="safety" style="margin:0;padding-left:18px">
             <li><b>Add acid to water, never water to acid.</b> Dilute muriatic in a bucket; add in the deep end, away from lights and skimmers.</li>
-            <li><b>Never mix chemicals.</b> Cal-hypo + trichlor dry is a fire/explosion hazard. Keep acid and chlorine additions hours apart with full circulation.</li>
-            <li><b>Pump running, one dose at a time.</b> Wait ~15–30 min between different chemicals; retest 4–6 hours after dosing before adding more.</li>
-            <li><b>Never shock with pH or alkalinity out of range</b>, and don't dose blind — test first, every time.</li>
+            <li><b>Never mix chemicals.</b> Cal-hypo and trichlor mixed dry is a fire and explosion hazard. Keep acid and chlorine additions hours apart with full circulation.</li>
+            <li><b>Pump running, one dose at a time.</b> Wait about 15 to 30 minutes between different chemicals; retest 4 to 6 hours after dosing before adding more.</li>
+            <li><b>Never shock with pH or alkalinity out of range,</b> and don't dose blind; test first, every time.</li>
           </ul>
         </div>
       </div>
-
+ 
       <div class="footer-note" id="foot"></div>
     </div>
   </div>
 </div>
-
+ 
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const num=id=>{const v=parseFloat($(id).value);return isFinite(v)?v:0;};
 const fmt=(n,d=0)=>n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
-
-let volMode='enter', location_='outdoor', readMode='daily';
-
+ 
+let volMode='enter', location_='outdoor', readMode='daily', history=[];
+ 
+const HIST_KEYS=['pH','fc','orp','ta','ch','cya','salt','tds','cc','temp'];
+const METRIC_META={
+  fc:{label:'Free Chlorine',unit:'ppm',dp:1},
+  pH:{label:'pH',unit:'',dp:1},
+  orp:{label:'ORP',unit:'mV',dp:0},
+  ta:{label:'Alkalinity',unit:'ppm',dp:0},
+  ch:{label:'Calcium Hardness',unit:'ppm',dp:0},
+  cya:{label:'Cyanuric Acid',unit:'ppm',dp:0}
+};
+const SYNC_W={fc:0.30,pH:0.25,orp:0.15,ta:0.10,ch:0.10,cya:0.10};
+ 
 function computeVolume(){
   let gal;
   if(volMode==='enter'){gal=num('vol_gal');}
@@ -367,7 +442,7 @@ function computeVolume(){
   }
   return Math.max(gal,100);
 }
-
+ 
 function ranges(cya,sanitizer,surface,loc){
   const R={};
   R.pH={min:7.4,max:7.6,target:7.5,scale:[6.8,8.2],unit:'',dp:1};
@@ -387,7 +462,7 @@ function ranges(cya,sanitizer,surface,loc){
   R.salt={min:2700,max:3400,target:3200,scale:[0,5000],unit:'ppm',dp:0};
   return R;
 }
-
+ 
 function lsi(pH,tempF,ch,ta,cya,tds){
   const tempC=(tempF-32)*5/9;
   const A=(Math.log10(Math.max(tds,50))-1)/10;
@@ -398,22 +473,30 @@ function lsi(pH,tempF,ch,ta,cya,tds){
   const D=Math.log10(carbAlk);
   return pH-(9.3+A+B-C-D);
 }
-
+ 
+function paramScore(val,r){
+  const width=(r.max-r.min)||1;
+  if(val>=r.min && val<=r.max) return 100;
+  if(r.highIsOk && val>r.max) return 100;
+  const dist = val<r.min ? (r.min-val) : (val-r.max);
+  return clamp(100-(dist/width)*100,0,100);
+}
+ 
 function dry(oz){if(oz<0.4)return'a pinch';if(oz>=16)return fmt(oz/16,oz/16<10?2:1)+' lb';return fmt(oz,1)+' oz';}
 function drySub(oz){return oz>=16?fmt(oz,0)+' oz total':'';}
 function liq(f){if(f<0.5)return'a splash';if(f>=128)return fmt(f/128,2)+' gal';if(f>=32)return fmt(f/32,1)+' qt';if(f>=8)return fmt(f/8,1)+' cups';return fmt(f,1)+' fl oz';}
 function liqSub(f){return f>=8?fmt(f,0)+' fl oz total':'';}
-
+ 
 function gaugeHTML(name,val,r){
   const [lo,hi]=r.scale, pos=v=>clamp((v-lo)/(hi-lo)*100,0,100);
   const mk=pos(val),bandL=pos(r.min),bandR=pos(r.max);
   let state,color,fix,fixcol;
   const hard=r.hardMin!==undefined;
-  if(hard&&val<r.hardMin){state='LOW';color='var(--high)';fix='▲ raise now — under-sanitized';fixcol='var(--high)';}
-  else if(val<r.min){state='LOW';color='var(--low)';fix='▲ raise';fixcol='var(--low)';}
-  else if(val>r.max){ if(r.highIsOk){state='HIGH';color='var(--warn)';fix='strong oxidation — generally fine';fixcol='var(--ink-3)';}
-    else{state='HIGH';color='var(--high)';fix='▼ lower';fixcol='var(--high)';} }
-  else{state='OK';color='var(--aqua)';fix='✓ in range';fixcol='var(--aqua-dim)';}
+  if(hard&&val<r.hardMin){state='LOW';color='var(--high)';fix='raise now, currently under-sanitized';fixcol='var(--high)';}
+  else if(val<r.min){state='LOW';color='var(--low)';fix='raise';fixcol='var(--low)';}
+  else if(val>r.max){ if(r.highIsOk){state='HIGH';color='var(--warn)';fix='strong oxidation, generally fine';fixcol='var(--ink-3)';}
+    else{state='HIGH';color='var(--high)';fix='lower';fixcol='var(--high)';} }
+  else{state='OK';color='var(--aqua)';fix='in range';fixcol='var(--aqua-dim)';}
   const ps=color==='var(--aqua)'?'color:var(--aqua);border-color:rgba(63,224,208,.4);background:rgba(63,224,208,.08)'
     :(color==='var(--low)'?'color:var(--low);border-color:rgba(74,163,255,.4);background:rgba(74,163,255,.08)'
     :(color==='var(--warn)'?'color:var(--warn);border-color:rgba(255,176,32,.4);background:rgba(255,176,32,.08)'
@@ -421,43 +504,55 @@ function gaugeHTML(name,val,r){
   return `<div class="gauge">
     <div class="gauge-top"><span class="gauge-name">${name}</span><span class="pill" style="${ps}">${state}</span></div>
     <div class="gauge-read" style="color:${color}">${fmt(val,r.dp)}<span>${r.unit}</span></div>
-    <div class="gauge-ideal">Ideal <b>${fmt(r.min,r.dp)}–${fmt(r.max,r.dp)} ${r.unit}</b></div>
+    <div class="gauge-ideal">Ideal <b>${fmt(r.min,r.dp)} to ${fmt(r.max,r.dp)} ${r.unit}</b></div>
     <div class="track"><div class="ideal" style="left:${bandL}%;right:${100-bandR}%"></div><div class="marker" style="left:${mk}%;background:${color}"></div></div>
     <div class="scale"><span>${fmt(lo,0)}</span><span>${fmt(hi,0)}</span></div>
     <div class="gauge-fix" style="color:${fixcol}">${fix}</div>
   </div>`;
 }
-function tempCard(t){return `<div class="tempchip"><span class="gauge-name">Water Temp</span><div class="gauge-read">${fmt(t,0)}<span>°F</span></div><div class="gauge-ideal">Drives the balance calculation</div></div>`;}
-
+function tempCard(t){return `<div class="tempchip"><span class="gauge-name">Water Temp</span><div class="gauge-read">${fmt(t,0)}<span>F</span></div><div class="gauge-ideal">Drives the balance calculation</div></div>`;}
+ 
 function update(){
   const gal=computeVolume(),V=gal/10000;
-  $('vol_liters').textContent='≈ '+fmt(gal*3.78541,0)+' L';
+  $('vol_liters').textContent='approx '+fmt(gal*3.78541,0)+' L';
   const sanitizer=$('sanitizer').value,surface=$('surface').value;
   const pH=num('pH'),fc=num('fc'),orp=num('orp'),temp=num('temp'),
         ta=num('ta'),ch=num('ch'),cya=num('cya'),salt=num('salt'),tds=num('tds')||1000,cc=num('cc');
   const isSalt=sanitizer==='salt', full=readMode==='full';
   $('salt-field').classList.toggle('hide',!isSalt);
   const R=ranges(cya,sanitizer,surface,location_);
-
-  /* ---- verdict ---- */
-  const crit=[],caut=[];
-  if(fc<R.fc.hardMin)crit.push('Free chlorine '+fmt(fc,1)+' ppm is below the safe minimum of '+fmt(R.fc.hardMin,1)+' — the water is not sanitizing.');
-  if(pH<7.0)crit.push('pH '+fmt(pH,1)+' is very low — corrosive to plaster, metal and skin.');
-  else if(pH>8.0)crit.push('pH '+fmt(pH,1)+' is very high — chlorine is barely active.');
-  else if(pH<R.pH.min||pH>R.pH.max)caut.push('pH '+fmt(pH,1)+' is outside the ideal 7.4–7.6.');
-  if(fc>=R.fc.hardMin&&fc<R.fc.target)caut.push('Free chlorine is on the low side of target ('+fmt(R.fc.target,1)+' ppm).');
-  if(orp>0&&orp<650)caut.push('ORP '+fmt(orp,0)+' mV is below the 650 mV disinfection benchmark.');
-  if(full&&cc>=0.5)caut.push('Combined chlorine '+fmt(cc,1)+' ppm — chloramines present.');
-  let vstate,vcol,vhead;
-  if(crit.length){vstate='DO NOT SWIM';vcol='var(--high)';vhead=crit[0];}
-  else if(caut.length){vstate='NEEDS ATTENTION';vcol='var(--warn)';vhead=caut[0];}
-  else{vstate='WATER IS GOOD';vcol='var(--aqua)';vhead='Sanitizer, pH and ORP all read in range.';}
-  const allR=[...crit,...caut];
-  $('verdict').innerHTML=`<div class="verdict-top">
-      <span class="verdict-badge" style="color:${vcol};border-color:${vcol}">${vstate}</span>
-      <span class="verdict-line">${vhead}</span></div>
-    ${allR.length>1?`<ul class="verdict-reasons">${allR.slice(1).map(r=>`<li>${r}</li>`).join('')}</ul>`:''}`;
-
+ 
+  /* ---- water sync slider ---- */
+  const avail={};
+  avail.fc=paramScore(fc,R.fc);
+  avail.pH=paramScore(pH,R.pH);
+  if(orp>0) avail.orp=paramScore(orp,R.orp);
+  if(full){avail.ta=paramScore(ta,R.ta);avail.ch=paramScore(ch,R.ch);avail.cya=paramScore(cya,R.cya);}
+  let wsum=0,ssum=0;
+  Object.keys(avail).forEach(k=>{wsum+=SYNC_W[k];ssum+=SYNC_W[k]*avail[k];});
+  const syncPct=wsum?ssum/wsum:100;
+  let syncLabel,swimColor;
+  if(syncPct>=90){syncLabel='In sync';swimColor='var(--aqua)';}
+  else if(syncPct>=75){syncLabel='Mostly in sync';swimColor='var(--aqua-dim)';}
+  else if(syncPct>=55){syncLabel='Slightly out of sync';swimColor='var(--warn)';}
+  else if(syncPct>=30){syncLabel='Out of sync';swimColor='#dc9a55';}
+  else {syncLabel='Well out of sync';swimColor='#cf7d6a';}
+  const factors=[];
+  if(fc<R.fc.hardMin) factors.push('free chlorine is low enough that the water is not really sanitizing yet');
+  else if(fc<R.fc.target-0.2) factors.push('free chlorine is a bit under target');
+  if(pH<R.pH.min) factors.push('pH is running low');
+  else if(pH>R.pH.max) factors.push('pH is running high');
+  if(orp>0 && orp<R.orp.min) factors.push('ORP is under the usual benchmark');
+  if(full && cc>=0.5) factors.push('combined chlorine points to some chloramines building up');
+  if(full && cya>R.cya.max+5) factors.push('cyanuric acid is running high');
+  let note=syncLabel+'.';
+  note += factors.length? (' Mainly because '+factors.slice(0,2).join(' and ')+'.') : ' Everything you are tracking is sitting close to target.';
+  $('verdict').innerHTML=`
+    <div class="swim-head"><span class="swim-title">Water Sync</span><span class="swim-read" style="color:${swimColor}">${Math.round(syncPct)}%</span></div>
+    <div class="swim-meter"><div class="swim-needle" id="swim_needle" style="left:${clamp(syncPct,0,100)}%"></div></div>
+    <div class="swim-scale"><span>Out of sync</span><span>In sync</span></div>
+    <div class="lsi-note">${note}</div>`;
+ 
   /* ---- LSI ---- */
   const L=lsi(pH,temp,ch,ta,cya,tds);
   $('lsi_val').textContent=(L>=0?'+':'')+L.toFixed(2);
@@ -465,83 +560,83 @@ function update(){
   $('lsi_band').style.left=clamp((-0.3+1)/2*100,0,100)+'%';
   $('lsi_band').style.right=100-clamp((0.3+1)/2*100,0,100)+'%';
   let ls,lc,ln;
-  if(L<-0.3){ls='CORROSIVE';lc='var(--low)';ln='Aggressive water — it pulls calcium from plaster, grout and metal. Raise calcium, alkalinity or pH toward zero.';}
-  else if(L>0.3){ls='SCALING';lc='var(--high)';ln='Scale-forming — deposits on tile and inside the heater. Lower pH or alkalinity toward zero.';}
-  else{ls='BALANCED';lc='var(--aqua)';ln='In balance — neither corrosive nor scale-forming. Hold pH, alkalinity, calcium and temperature steady.';}
+  if(L<-0.3){ls='CORROSIVE';lc='var(--low)';ln='Aggressive water. It pulls calcium from plaster, grout and metal. Raise calcium, alkalinity or pH toward zero.';}
+  else if(L>0.3){ls='SCALING';lc='var(--high)';ln='Scale-forming. Expect deposits on tile and inside the heater. Lower pH or alkalinity toward zero.';}
+  else{ls='BALANCED';lc='var(--aqua)';ln='In balance, neither corrosive nor scale-forming. Hold pH, alkalinity, calcium and temperature steady.';}
   const st=$('lsi_state');st.textContent=ls;st.style.color=lc;st.style.borderColor=lc;
   $('lsi_val').style.color=lc;$('lsi_note').textContent=ln;
   $('lsi_est').classList.toggle('hide',full);
-
+ 
   /* ---- gauges ---- */
   const g=[gaugeHTML('Free Chlorine',fc,R.fc),gaugeHTML('pH',pH,R.pH),gaugeHTML('ORP',orp,R.orp)];
   if(full){g.push(gaugeHTML('Total Alkalinity',ta,R.ta),gaugeHTML('Calcium Hardness',ch,R.ch),gaugeHTML('Cyanuric Acid',cya,R.cya));if(isSalt)g.push(gaugeHTML('Salt',salt,R.salt));}
   g.push(tempCard(temp));
   $('gauges').innerHTML=g.join('');
-
+ 
   /* ---- fixes ---- */
   const steps=[];
   function phStep(){
     if(pH<R.pH.min-0.02){const d=R.pH.target-pH,oz=30*d*V,addTA=Math.round(25*d);
-      steps.push({t:'Raise pH',now:'now '+fmt(pH,1)+', target '+R.pH.target,amt:dry(oz),sub:drySub(oz),note:'Soda ash (sodium carbonate). Pre-dissolve; it clouds briefly. Also lifts alkalinity ≈ '+addTA+' ppm.'});}
+      steps.push({t:'Raise pH',now:'now '+fmt(pH,1)+', target '+R.pH.target,amt:dry(oz),sub:drySub(oz),note:'Soda ash (sodium carbonate). Pre-dissolve; it clouds briefly. Also lifts alkalinity by about '+addTA+' ppm.'});}
     else if(pH>R.pH.max+0.02){const d=pH-R.pH.target,f=40*d*V,dropTA=Math.round(25*d);
-      steps.push({t:'Lower pH',now:'now '+fmt(pH,1)+', target '+R.pH.target,amt:liq(f),sub:liqSub(f),note:'Muriatic acid (31%). Estimate — acid demand rises with alkalinity, so retest before re-dosing. Also lowers alkalinity ≈ '+dropTA+' ppm.'});}
+      steps.push({t:'Lower pH',now:'now '+fmt(pH,1)+', target '+R.pH.target,amt:liq(f),sub:liqSub(f),note:'Muriatic acid (31%), an estimate since acid demand rises with alkalinity, so retest before adding more. Also lowers alkalinity by about '+dropTA+' ppm.'});}
   }
   function fcStep(){
     if(fc<R.fc.target-0.2){const d=R.fc.target-fc,f=10.7*d*V,below=fc<R.fc.hardMin;
-      steps.push({t:below?'Add chlorine — under-sanitized':'Raise free chlorine',now:'now '+fmt(fc,1)+', target '+fmt(R.fc.target,1),amt:liq(f),sub:liqSub(f),note:'Sodium hypochlorite (12.5%) to reach target for '+(cya>0?cya+' ppm CYA':'this pool')+'. Cal-hypo alt: ≈ '+dry(2.0*d*V)+' of 73%.'});}
+      steps.push({t:below?'Add chlorine, under-sanitized':'Raise free chlorine',now:'now '+fmt(fc,1)+', target '+fmt(R.fc.target,1),amt:liq(f),sub:liqSub(f),note:'Sodium hypochlorite (12.5%) to reach target for '+(cya>0?cya+' ppm CYA':'this pool')+'. Cal-hypo alternative: about '+dry(2.0*d*V)+' of 73%.'});}
     else if(fc>R.fc.max+0.5){steps.push({t:'Chlorine is high',now:'now '+fmt(fc,1),amt:'Wait it out',sub:'',note:'Stop chlorinating and let sunlight burn it off. Hold off swimming until FC falls near '+fmt(R.fc.target,1)+' ppm.'});}
   }
   if(full){
     if(ta<R.ta.min-2){const d=R.ta.target-ta,oz=2.4*d*V;steps.push({t:'Raise alkalinity',now:'now '+fmt(ta,0)+', target '+R.ta.target,amt:dry(oz),sub:drySub(oz),note:'Baking soda (sodium bicarbonate). Dissolve, broadcast with pump on. Raises pH slightly.'});}
     else if(ta>R.ta.max+2){const d=ta-R.ta.target,f=2.56*d*V;steps.push({t:'Lower alkalinity',now:'now '+fmt(ta,0)+', target '+R.ta.target,amt:liq(f),sub:liqSub(f),note:'Muriatic acid (31%). Add in one spot pump-off, then aerate to bring pH back without re-raising alkalinity.'});}
     phStep();
-    if(ch<R.ch.min-5){const d=R.ch.target-ch,oz=2.0*d*V;steps.push({t:'Raise calcium hardness',now:'now '+fmt(ch,0)+', target '+R.ch.target,amt:dry(oz),sub:drySub(oz),note:'Calcium chloride (77%). Add slowly — releases heat.'});}
-    else if(ch>R.ch.max+10){steps.push({t:'Lower calcium hardness',now:'now '+fmt(ch,0),amt:'Dilute',sub:'',note:'No chemical removes calcium — partial drain and refill is the only fix.'});}
-    if(location_==='outdoor'&&cya<R.cya.min-2){const d=R.cya.target-cya,oz=1.3*d*V;steps.push({t:'Raise cyanuric acid',now:'now '+fmt(cya,0)+', target '+R.cya.target,amt:dry(oz),sub:drySub(oz),note:'Stabilizer through the skimmer, pump on; no backwash 3–5 days. Do at normal chlorine, not during shock.'});}
+    if(ch<R.ch.min-5){const d=R.ch.target-ch,oz=2.0*d*V;steps.push({t:'Raise calcium hardness',now:'now '+fmt(ch,0)+', target '+R.ch.target,amt:dry(oz),sub:drySub(oz),note:'Calcium chloride (77%). Add slowly, it releases heat.'});}
+    else if(ch>R.ch.max+10){steps.push({t:'Lower calcium hardness',now:'now '+fmt(ch,0),amt:'Dilute',sub:'',note:'No chemical removes calcium. A partial drain and refill is the only fix.'});}
+    if(location_==='outdoor'&&cya<R.cya.min-2){const d=R.cya.target-cya,oz=1.3*d*V;steps.push({t:'Raise cyanuric acid',now:'now '+fmt(cya,0)+', target '+R.cya.target,amt:dry(oz),sub:drySub(oz),note:'Stabilizer through the skimmer, pump on. No backwash for 3 to 5 days while it dissolves. Do this at normal chlorine, not during shock.'});}
     else if(cya>R.cya.max+5){steps.push({t:'Lower cyanuric acid',now:'now '+fmt(cya,0),amt:'Dilute',sub:'',note:'CYA only comes down by replacing water. High CYA locks up chlorine.'});}
     if(isSalt){if(salt<R.salt.min-50){const d=R.salt.target-salt,lbs=d*8.34*gal/1e6;steps.push({t:'Raise salt',now:'now '+fmt(salt,0)+', target '+R.salt.target,amt:fmt(lbs,1)+' lb',sub:'',note:'Pool-grade salt for the generator; brush to dissolve.'});}
       else if(salt>R.salt.max+100){steps.push({t:'Lower salt',now:'now '+fmt(salt,0),amt:'Dilute',sub:'',note:'Salt only drops by replacing water.'});}}
     fcStep();
   } else { phStep(); fcStep(); }
-
-  $('fix-order').textContent=full?'order: alkalinity → pH → calcium → stabilizer → chlorine':'daily: pH → chlorine';
+ 
+  $('fix-order').textContent=full?'order: alkalinity, pH, calcium, stabilizer, chlorine':'daily: pH, chlorine';
   $('mode-note').classList.toggle('hide',full);
   if(!full)$('mode-note').textContent='Showing daily fixes only. Switch to Full test to balance alkalinity, calcium and stabilizer.';
   const dl=$('dose-list');
-  if(steps.length===0){dl.innerHTML=`<div class="allgood"><div class="big">✓ Nothing to add</div>${full?'Every parameter is in range for this setup.':'pH and chlorine are in range. Keep testing daily.'}</div>`;}
-  else{dl.innerHTML=steps.map((s,i)=>`<div class="dose"><div class="num">${i+1}</div><div class="body"><div class="title">${s.t}<small>${s.now}</small></div><div class="amt">${s.amt}${s.sub?` <small>· ${s.sub}</small>`:''}</div><div class="sub">${s.note}</div></div></div>`).join('');}
-
+  if(steps.length===0){dl.innerHTML=`<div class="allgood"><div class="big">Nothing to add</div>${full?'Every parameter is in range for this setup.':'pH and chlorine are in range. Keep testing daily.'}</div>`;}
+  else{dl.innerHTML=steps.map((s,i)=>`<div class="dose"><div class="num">${i+1}</div><div class="body"><div class="title">${s.t}<small>${s.now}</small></div><div class="amt">${s.amt}${s.sub?` <small>(${s.sub})</small>`:''}</div><div class="sub">${s.note}</div></div></div>`).join('');}
+ 
   /* ---- analytics ---- */
   const ins=[];
   const add=(sev,h,b)=>ins.push({sev,h,b});
   const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--aqua-dim)'};
-  if(fc<R.fc.hardMin) add('high','Not sanitizing right now','Free chlorine is below the safe minimum. Add sodium hypochlorite and keep swimmers out until it recovers — nothing else you balance matters while the pool is unprotected.');
+  if(fc<R.fc.hardMin) add('high','Not sanitizing right now','Free chlorine is below the safe minimum. Add sodium hypochlorite and keep swimmers out until it recovers. Nothing else you balance matters much while the pool is unprotected.');
   if(orp>0&&orp>=650&&fc<R.fc.hardMin&&pH<7.2)
-    add('high','ORP looks fine but it is lying','Your ORP reads healthy while free chlorine is near zero. The low pH ('+fmt(pH,1)+') is inflating the ORP — more of your chlorine is in its active form, so the probe sees strong oxidation from very little sanitizer. Raise pH first, then chlorinate; ORP will settle to its true level and you will hold a real reserve.');
+    add('high','ORP looks fine but it is misleading','Your ORP reads healthy while free chlorine is near zero. The low pH ('+fmt(pH,1)+') is inflating the ORP. More of your chlorine is in its active form, so the probe sees strong oxidation from very little sanitizer. Raise pH first, then chlorinate. ORP will settle to its true level and you will hold a real reserve.');
   else if(orp>0&&orp<650&&fc>=R.fc.target){
-    let causes='high pH, chloramines, or a probe that needs cleaning/calibration';
+    let causes='high pH, chloramines, or a probe that needs cleaning or calibration';
     if(full&&cya>70)causes='high cyanuric acid ('+fmt(cya,0)+' ppm) suppressing the reading, high pH, or a probe needing service';
     add('med','Chlorine reads OK but ORP is low','Free chlorine looks adequate yet ORP is under 650 mV. Usual causes: '+causes+'. Confirm free chlorine with a manual drop test before trusting the controller.');}
-  if(full&&cya>70) add('high','Cyanuric acid is too high','At '+fmt(cya,0)+' ppm, CYA locks up chlorine and drags ORP down — you would need impractically high FC to sanitize. Dilute with fresh water to get back near '+R.cya.target+' ppm.');
+  if(full&&cya>70) add('high','Cyanuric acid is too high','At '+fmt(cya,0)+' ppm, CYA locks up chlorine and drags ORP down. You would need impractically high FC to sanitize. Dilute with fresh water to get back near '+R.cya.target+' ppm.');
   if(pH<7.2){
-    if(sanitizer==='trichlor')add('med','pH keeps drifting down','Trichlor tabs are strongly acidic and also add CYA. Steady tab use pulls pH and alkalinity down while stabilizer climbs — plan on regular base additions or move trichlor to a supplemental role.');
+    if(sanitizer==='trichlor')add('med','pH keeps drifting down','Trichlor tabs are strongly acidic and also add CYA. Steady tab use pulls pH and alkalinity down while stabilizer climbs. Plan on regular base additions, or move trichlor to a supplemental role.');
     else if(full&&ta<60)add('med','Low alkalinity is letting pH bounce','Alkalinity '+fmt(ta,0)+' ppm is too low to buffer pH, so it swings with every dose and rainstorm. Raise alkalinity first, then pH will hold.');
-    else add('info','Low pH is corrosive','Below 7.2 the water etches plaster and attacks metal. Raise it and check the driver — acid overdosing, CO2 systems, rain, or trichlor.');
+    else add('info','Low pH is corrosive','Below 7.2 the water etches plaster and attacks metal. Raise it, and check the likely driver: acid overdosing, a CO2 system, rain, or trichlor tabs.');
   }
   if(pH>7.8){
     if(sanitizer==='salt'||sanitizer==='liquid')add('med','pH keeps drifting up','Salt cells (aeration) and sodium hypochlorite (alkaline feed) both push pH up over time. Small, regular acid additions are normal maintenance here.');
-    else if(full&&ta>120)add('med','High alkalinity is pushing pH up','Alkalinity '+fmt(ta,0)+' ppm keeps driving pH high. Lower alkalinity with acid + aeration to stabilize it.');
+    else if(full&&ta>120)add('med','High alkalinity is pushing pH up','Alkalinity '+fmt(ta,0)+' ppm keeps driving pH high. Lower alkalinity with acid plus aeration to stabilize it.');
   }
-  if(location_==='outdoor'&&full&&cya<20)add('med','No sun protection for chlorine','With CYA under 20 ppm outdoors, UV burns off most of your chlorine within hours — you will fight demand all day. Bring CYA to 30–50.');
-  if(full&&cc>=0.5)add('med','Chloramines are present','Combined chlorine '+fmt(cc,1)+' ppm is spent, irritating chlorine — the "pool smell." Shock to breakpoint to clear it, then combined chlorine should read near zero.');
+  if(location_==='outdoor'&&full&&cya<20)add('med','No sun protection for chlorine','With CYA under 20 ppm outdoors, UV burns off most of your chlorine within hours, and you will fight demand all day. Bring CYA to 30 to 50.');
+  if(full&&cc>=0.5)add('med','Chloramines are present','Combined chlorine '+fmt(cc,1)+' ppm is spent, irritating chlorine, the "pool smell." Shock to breakpoint to clear it, then combined chlorine should read near zero.');
   if(L<-0.3)add('med','Corrosive water balance','Saturation index '+L.toFixed(2)+'. Even with chlorine right, this water leaches calcium from surfaces and pits metal. Nudge pH, alkalinity or calcium up.');
   else if(L>0.3)add('med','Scaling water balance','Saturation index '+L.toFixed(2)+'. Expect cloudiness and scale on tile and the heater. Bring pH or alkalinity down.');
-  if(temp<60&&L>=-0.3)add('info','Cold water runs aggressive','At '+fmt(temp,0)+'°F the same readings trend corrosive — a pool balanced in summer can drift negative in winter without a number changing.');
+  if(temp<60&&L>=-0.3)add('info','Cold water runs aggressive','At '+fmt(temp,0)+'F the same readings trend more corrosive. A pool balanced in summer can drift negative in winter without any single number changing much.');
   if(ins.length===0)add('info','Nothing unusual flagged','Readings are consistent with each other. Keep testing pH and chlorine daily and run a full panel weekly to stay ahead of drift.');
   const order={high:0,med:1,info:2};
   ins.sort((a,b)=>order[a.sev]-order[b.sev]);
   $('analytics').innerHTML=ins.slice(0,7).map(x=>`<div class="insight"><div class="sev" style="background:${sevCol[x.sev]}"></div><div class="c"><div class="h">${x.h}</div><div class="b">${x.b}</div></div></div>`).join('');
-
+ 
   /* ---- FC/CYA + shock ---- */
   const minFC=R.fc.hardMin,tgtFC=R.fc.target;
   const slam=cya>=25?Math.round(0.4*cya):10;
@@ -551,23 +646,234 @@ function update(){
   $('fccya').innerHTML=`
     <div class="kv"><span class="k">Minimum FC to stay safe</span><span class="v ${fc<minFC?'flag':'good'}">${fmt(minFC,1)} ppm</span></div>
     <div class="kv"><span class="k">Target FC (${cya>0?cya+' ppm CYA':'no CYA'})</span><span class="v">${fmt(tgtFC,1)} ppm</span></div>
-    <div class="kv"><span class="k">Current FC ÷ CYA</span><span class="v ${ratio!==null&&ratio<6?'flag':''}">${ratio!==null?fmt(ratio,1)+'%':'—'}</span></div>
+    <div class="kv"><span class="k">Current FC / CYA</span><span class="v ${ratio!==null&&ratio<6?'flag':''}">${ratio!==null?fmt(ratio,1)+'%':'-'}</span></div>
     ${full&&cc>0?`<div class="kv"><span class="k">Combined chlorine</span><span class="v ${cc>=0.5?'flag':'good'}">${fmt(cc,1)} ppm</span></div>`:''}
     <div class="kv"><span class="k">Shock / SLAM to</span><span class="v">${fmt(shockTo,0)} ppm</span></div>
-    <div class="kv"><span class="k">— sodium hypochlorite (12.5%)</span><span class="v">${liq(10.7*Math.max(shockTo-fc,0)*V)}</span></div>
-    <div class="kv"><span class="k">— or cal-hypo (73%)</span><span class="v">${dry(2.0*Math.max(shockTo-fc,0)*V)}</span></div>
-    <div style="font-size:12px;color:var(--ink-3);margin-top:12px;line-height:1.6">Hold free chlorine near <b style="color:var(--ink-2)">7.5% of CYA</b>. Shock when combined chlorine ≥ 0.5 ppm, after algae, or heavy use — and hold the shock level until it clears overnight.</div>`;
-
-  $('foot').innerHTML=`MODE ${full?'full panel':'daily'} · VOL ${fmt(gal,0)} gal · V ${V.toFixed(2)} · LSI ${(L>=0?'+':'')+L.toFixed(2)} · ORP ${fmt(orp,0)} mV<br>Doses are estimates per standard field references (Pool &amp; Hot Tub Alliance / NSPF tables). ORP is diagnostic — you correct it by fixing pH and free chlorine, not by dosing it directly. Test with a fresh kit, dose in order, retest before adding more.`;
+    <div class="kv"><span class="k">Sodium hypochlorite (12.5%)</span><span class="v">${liq(10.7*Math.max(shockTo-fc,0)*V)}</span></div>
+    <div class="kv"><span class="k">Or cal-hypo (73%)</span><span class="v">${dry(2.0*Math.max(shockTo-fc,0)*V)}</span></div>
+    <div style="font-size:12px;color:var(--ink-3);margin-top:12px;line-height:1.6">Hold free chlorine near <b style="color:var(--ink-2)">7.5% of CYA</b>. Shock when combined chlorine is 0.5 ppm or higher, after algae, or heavy use, and hold the shock level until it clears overnight.</div>`;
+ 
+  $('foot').innerHTML=`MODE ${full?'full panel':'daily'} | VOL ${fmt(gal,0)} gal | V ${V.toFixed(2)} | LSI ${(L>=0?'+':'')+L.toFixed(2)} | ORP ${fmt(orp,0)} mV<br>Doses are estimates per standard field references (Pool &amp; Hot Tub Alliance / NSPF tables). ORP is diagnostic. You correct it by fixing pH and free chlorine, not by dosing it directly. Test with a fresh kit, dose in order, retest before adding more.`;
+ 
+  renderHistory();
 }
-
+ 
+/* ---------- history / trends ---------- */
+function todayStr(){const d=new Date();const off=d.getTimezoneOffset();const local=new Date(d.getTime()-off*60000);return local.toISOString().slice(0,10);}
+ 
+function upsertHistory(entry){
+  if(!entry||!entry.date) return;
+  const i=history.findIndex(h=>h.date===entry.date);
+  if(i>=0) history[i]=Object.assign({},history[i],entry);
+  else history.push(entry);
+  history.sort((a,b)=>a.date.localeCompare(b.date));
+}
+ 
+function parseCSV(text){
+  const lines=text.split(/\r?\n/).filter(l=>l.trim().length);
+  if(lines.length<2) return [];
+  const headers=lines[0].split(',').map(h=>h.trim().toLowerCase());
+  const lowerKeys=HIST_KEYS.map(k=>k.toLowerCase());
+  const out=[];
+  for(let i=1;i<lines.length;i++){
+    const cells=lines[i].split(',').map(c=>c.trim());
+    const row={};
+    headers.forEach((h,idx)=>{
+      const v=cells[idx];
+      if(v===undefined||v==='') return;
+      if(h==='date'){row.date=v;return;}
+      const li=lowerKeys.indexOf(h);
+      if(li>=0){const n=parseFloat(v);if(isFinite(n))row[HIST_KEYS[li]]=n;}
+    });
+    if(row.date) out.push(row);
+  }
+  return out;
+}
+ 
+function renderHistory(){
+  $('hist_count').textContent=history.length;
+  $('hist_empty').classList.toggle('hide',history.length>0);
+  $('hist_content').classList.toggle('hide',history.length===0);
+  if(history.length===0) return;
+  drawChart();
+  drawInsights();
+  drawTable();
+}
+ 
+function drawChart(){
+  const metric=$('hist_metric').value;
+  const meta=METRIC_META[metric];
+  const pts=history.filter(h=>h[metric]!==undefined).map(h=>({t:new Date(h.date).getTime(),v:h[metric],date:h.date}));
+  const wrap=$('hist_chart_wrap');
+  if(pts.length===0){wrap.innerHTML=`<div class="chart-empty2">No logged values for ${meta.label} yet.</div>`;return;}
+  pts.sort((a,b)=>a.t-b.t);
+  if(pts.length===1){
+    wrap.innerHTML=`<div class="chart-empty2">Only one ${meta.label} entry so far, ${fmt(pts[0].v,meta.dp)} ${meta.unit} on ${pts[0].date}. Log a few more to see a trend line.</div>`;
+    return;
+  }
+  const sanitizer=$('sanitizer').value, surface=$('surface').value;
+  const R=ranges(num('cya'),sanitizer,surface,location_);
+  const rr=R[metric];
+  const vals=pts.map(p=>p.v);
+  let lo=Math.min(rr.scale[0],...vals), hi=Math.max(rr.scale[1],...vals);
+  const pad=(hi-lo)*0.08||1; lo-=pad; hi+=pad;
+  const W=640,H=220,PAD_L=42,PAD_R=14,PAD_T=14,PAD_B=28;
+  const plotW=W-PAD_L-PAD_R, plotH=H-PAD_T-PAD_B;
+  const tMin=pts[0].t, tMax=pts[pts.length-1].t;
+  const xOf=t=> PAD_L + (tMax>tMin? (t-tMin)/(tMax-tMin)*plotW : plotW/2);
+  const yOf=v=> PAD_T + plotH - clamp((v-lo)/(hi-lo),0,1)*plotH;
+  const bandTop=yOf(rr.max), bandBot=yOf(rr.min);
+  const path=pts.map((p,i)=>(i===0?'M':'L')+xOf(p.t).toFixed(1)+' '+yOf(p.v).toFixed(1)).join(' ');
+  const dots=pts.map(p=>`<circle cx="${xOf(p.t).toFixed(1)}" cy="${yOf(p.v).toFixed(1)}" r="3.4" style="fill:var(--aqua);stroke:var(--bg-2);stroke-width:1.5"><title>${p.date}: ${fmt(p.v,meta.dp)} ${meta.unit}</title></circle>`).join('');
+  const gridY=[lo,(lo+hi)/2,hi];
+  const gridLines=gridY.map(v=>`<line x1="${PAD_L}" x2="${W-PAD_R}" y1="${yOf(v).toFixed(1)}" y2="${yOf(v).toFixed(1)}" style="stroke:var(--line-soft);stroke-width:1"/><text x="${PAD_L-6}" y="${(yOf(v)+3).toFixed(1)}" text-anchor="end" style="font-family:var(--mono);font-size:9.5px;fill:var(--ink-3)">${fmt(v,meta.dp)}</text>`).join('');
+  const xLabels=[pts[0],pts[pts.length-1]].map((p,i)=>`<text x="${xOf(p.t).toFixed(1)}" y="${H-8}" text-anchor="${i===0?'start':'end'}" style="font-family:var(--mono);font-size:9.5px;fill:var(--ink-3)">${p.date}</text>`).join('');
+  wrap.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
+    <rect x="${PAD_L}" y="${bandTop.toFixed(1)}" width="${plotW}" height="${Math.max(0,bandBot-bandTop).toFixed(1)}" style="fill:rgba(63,224,208,.10);stroke:rgba(63,224,208,.35);stroke-dasharray:3 3"/>
+    ${gridLines}
+    <path d="${path}" style="fill:none;stroke:var(--aqua);stroke-width:2"/>
+    ${dots}
+    ${xLabels}
+  </svg>
+  <div class="hist-note">Shaded band is the current ideal range for ${meta.label}, ${fmt(rr.min,meta.dp)} to ${fmt(rr.max,meta.dp)} ${meta.unit}, based on your current setup rather than what was set up on each past date. Hover a point to see its exact reading and date.</div>`;
+}
+ 
+function drawInsights(){
+  const box=$('hist_insights');
+  if(history.length<3){
+    box.innerHTML=`<div class="insight"><div class="sev" style="background:var(--aqua-dim)"></div><div class="c"><div class="h">Not enough history yet</div><div class="b">Log a few more tests, at least 3, and trend notes will start showing up here.</div></div></div>`;
+    return;
+  }
+  const sanitizer=$('sanitizer').value, surface=$('surface').value;
+  const R=ranges(num('cya'),sanitizer,surface,location_);
+  const items=[];
+  function trendFor(key){
+    const pts=history.filter(h=>h[key]!==undefined).map(h=>({t:(new Date(h.date).getTime())/86400000,v:h[key]}));
+    if(pts.length<3) return null;
+    const n=pts.length, meanT=pts.reduce((a,p)=>a+p.t,0)/n, meanV=pts.reduce((a,p)=>a+p.v,0)/n;
+    let num2=0,den=0;
+    pts.forEach(p=>{num2+=(p.t-meanT)*(p.v-meanV);den+=(p.t-meanT)**2;});
+    const slope=den?num2/den:0;
+    return {slope,n,pts};
+  }
+  const fcT=trendFor('fc');
+  if(fcT){
+    const weekly=fcT.slope*7, width=R.fc.max-R.fc.min;
+    if(Math.abs(weekly)>width*0.4){
+      items.push({sev:'med',h:'Free chlorine is trending '+(weekly>0?'up':'down'),b:'Over your logged tests it is moving about '+fmt(Math.abs(weekly),1)+' ppm a week. '+(weekly<0?'Worth checking dosing frequency, CYA level, or bather load.':'Keep an eye on it so it does not climb well past target.')});
+    }
+    const belowCount=fcT.pts.filter(p=>p.v<R.fc.hardMin).length;
+    if(belowCount/fcT.n>=0.3){
+      items.push({sev:'high',h:'Chlorine has been low fairly often',b:'Free chlorine read below the safe minimum in '+belowCount+' of your last '+fcT.n+' logged tests. A more consistent dosing routine, or a look at CYA and bather load, would help.'});
+    }
+  }
+  const phT=trendFor('pH');
+  if(phT){
+    const weekly=phT.slope*7, width=R.pH.max-R.pH.min;
+    if(Math.abs(weekly)>width*0.4){
+      let why='Alkalinity is usually the lever to slow this down.';
+      if(sanitizer==='trichlor'&&weekly<0) why='Trichlor tabs push pH down over time, so this tracks with that.';
+      else if(sanitizer==='salt'&&weekly>0) why='Salt cells tend to drift pH upward, so this is fairly normal for that setup.';
+      items.push({sev:'med',h:'pH is trending '+(weekly>0?'up':'down'),b:'It has moved about '+fmt(Math.abs(weekly),2)+' a week across your logs. '+why});
+    }
+    const taPts=history.filter(h=>h.ta!==undefined);
+    const outCount=phT.pts.filter(p=>p.v<R.pH.min||p.v>R.pH.max).length;
+    if(outCount/phT.n>=0.4 && taPts.length && taPts.filter(h=>h.ta<80).length/taPts.length>=0.5){
+      items.push({sev:'med',h:'Low alkalinity may be behind the pH swings',b:'pH has been outside range in several tests, and alkalinity has often read low too. Bringing alkalinity up should help pH hold steadier.'});
+    }
+  }
+  if(items.length===0){
+    items.push({sev:'info',h:'Chemistry has been fairly steady',b:'Nothing stands out across your logged tests. Keep up the same routine.'});
+  }
+  const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--aqua-dim)'};
+  box.innerHTML=items.map(x=>`<div class="insight"><div class="sev" style="background:${sevCol[x.sev]}"></div><div class="c"><div class="h">${x.h}</div><div class="b">${x.b}</div></div></div>`).join('');
+}
+ 
+function drawTable(){
+  const cols=['date','pH','fc','orp','ta','ch','cya','temp'];
+  const labelMap={date:'Date',pH:'pH',fc:'FC',orp:'ORP',ta:'TA',ch:'CH',cya:'CYA',temp:'F'};
+  const dpMap={pH:1,fc:1,orp:0,ta:0,ch:0,cya:0,temp:0};
+  let html='<thead><tr>'+cols.map(c=>`<th>${labelMap[c]}</th>`).join('')+'<th></th></tr></thead><tbody>';
+  [...history].sort((a,b)=>b.date.localeCompare(a.date)).forEach(h=>{
+    html+='<tr>'+cols.map(c=>`<td>${h[c]!==undefined?(c==='date'?h[c]:fmt(h[c],dpMap[c])):'-'}</td>`).join('')+`<td class="del" data-date="${h.date}">x</td></tr>`;
+  });
+  html+='</tbody>';
+  $('hist_table').innerHTML=html;
+  $('hist_table').querySelectorAll('.del').forEach(el=>el.addEventListener('click',()=>{
+    history=history.filter(h=>h.date!==el.dataset.date); renderHistory();
+  }));
+}
+ 
 /* wiring */
 document.querySelectorAll('#volmode button').forEach(b=>b.addEventListener('click',()=>{volMode=b.dataset.vm;document.querySelectorAll('#volmode button').forEach(x=>x.classList.toggle('on',x===b));$('vol-enter').classList.toggle('hide',volMode!=='enter');$('vol-calc').classList.toggle('hide',volMode!=='calc');update();}));
 document.querySelectorAll('#loc button').forEach(b=>b.addEventListener('click',()=>{location_=b.dataset.loc;document.querySelectorAll('#loc button').forEach(x=>x.classList.toggle('on',x===b));update();}));
 document.querySelectorAll('#readmode button').forEach(b=>b.addEventListener('click',()=>{readMode=b.dataset.rm;document.querySelectorAll('#readmode button').forEach(x=>x.classList.toggle('on',x===b));$('adv-readings').classList.toggle('hide',readMode!=='full');update();}));
 $('shape').addEventListener('change',()=>{const round=$('shape').value==='round';$('dimA_l').textContent=round?'Diameter (ft)':'Length (ft)';$('dimB_wrap').style.display=round?'none':'block';update();});
 ['vol_gal','dimA','dimB','depthS','depthD','surface','sanitizer','pH','fc','orp','temp','ta','ch','cya','salt','tds','cc'].forEach(id=>$(id).addEventListener('input',update));
+ 
+$('hist_log').addEventListener('click',()=>{
+  const date=$('hist_date').value||todayStr();
+  const entry={date,pH:num('pH'),fc:num('fc'),temp:num('temp')};
+  if(num('orp')>0) entry.orp=num('orp');
+  if(readMode==='full'){
+    entry.ta=num('ta'); entry.ch=num('ch'); entry.cya=num('cya');
+    if($('sanitizer').value==='salt') entry.salt=num('salt');
+    if(num('tds')) entry.tds=num('tds');
+    if(num('cc')) entry.cc=num('cc');
+  }
+  upsertHistory(entry);
+  renderHistory();
+});
+$('hist_import').addEventListener('change',e=>{
+  const file=e.target.files[0]; if(!file) return;
+  const reader=new FileReader();
+  reader.onload=()=>{
+    try{
+      const rows=parseCSV(String(reader.result));
+      rows.forEach(r=>upsertHistory(r));
+      renderHistory();
+    }catch(err){
+      alert('Could not read that CSV. Expected a header row with columns like date,pH,fc,orp,ta,ch,cya,temp.');
+    }
+    e.target.value='';
+  };
+  reader.readAsText(file);
+});
+$('hist_export').addEventListener('click',()=>{
+  if(history.length===0) return;
+  const headers=['date',...HIST_KEYS];
+  const lines=[headers.join(',')];
+  history.forEach(h=>{lines.push(headers.map(k=>h[k]!==undefined?h[k]:'').join(','));});
+  const blob=new Blob([lines.join('\n')],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url; a.download='waterline-history.csv'; document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+});
+$('hist_clear').addEventListener('click',()=>{
+  if(history.length && !confirm('Clear all logged history? This cannot be undone. Export first if you want a copy.')) return;
+  history=[]; renderHistory();
+});
+$('hist_sample').addEventListener('click',()=>{
+  const base=Date.now()-1000*60*60*24*24;
+  for(let i=0;i<9;i++){
+    const d=new Date(base+i*1000*60*60*24*3);
+    upsertHistory({
+      date:d.toISOString().slice(0,10),
+      pH:+(7.3+Math.sin(i/2)*0.25+i*0.02).toFixed(2),
+      fc:+(3.2-Math.max(0,(i-5))*0.5+Math.random()*0.3).toFixed(1),
+      orp:Math.round(700+Math.sin(i)*40),
+      ta:90+i, ch:260+i*3, cya:35+Math.round(i*1.5),
+      temp:80+Math.round(Math.sin(i/3)*4)
+    });
+  }
+  renderHistory();
+});
+$('hist_metric').addEventListener('change',drawChart);
+ 
+$('hist_date').value=todayStr();
 update();
 </script>
 </body>
 </html>
+ 
