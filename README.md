@@ -6,7 +6,7 @@ A simple browser dashboard for pool water chemistry. Type in your test readings,
 
 It's one HTML file. No install, no server, nothing to set up. Open it and it works.
 
-**[Live demo]** [(add your link here once it's hosted)](https://henryadams123.github.io/Waterline-Pool-Console/)
+**[[Live demo](https://henryadams123.github.io/Waterline-Pool-Console/)]** 
 
 ---
 
