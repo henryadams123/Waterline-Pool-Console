@@ -3,99 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#F3EDE3">
 <title>Waterline: Pool Water Console</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#061419; --bg-2:#08191f; --surface:#0e2831; --surface-2:#123540;
-  --line:#1c4351; --line-soft:#16323d;
-  --aqua:#3fe0d0; --aqua-dim:#2aa89c;
-  --low:#4aa3ff; --high:#ff6b6b; --warn:#ffb020;
-  --ink:#e9f6f6; --ink-2:#93b4b8; --ink-3:#5f8288;
+  --bg:#F3EDE3; --bg-2:#EDE4D3; --surface:#FFFFFF; --surface-2:#F1E9DA;
+  --line:#DDD0BC; --line-soft:#E9E0D0;
+  --accent:#C14E0B; --accent-dim:#9C3D09;
+  --good:#4F7A5B; --good-dim:#3D6249;
+  --low:#5B7A99; --high:#B23A2E; --warn:#B8860B;
+  --ink:#2B211A; --ink-2:#6B5D4F; --ink-3:#9C8D7B;
   --radius:14px;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,sans-serif;
+  --sans:"Lora",Georgia,"Times New Roman",serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0;background:
-    radial-gradient(1200px 600px at 78% -10%, #0d2f38 0%, transparent 60%),
-    radial-gradient(900px 500px at 0% 8%, #0a232b 0%, transparent 55%),
+    radial-gradient(1000px 560px at 12% -10%, #FBF4E7 0%, transparent 55%),
+    radial-gradient(900px 520px at 100% 6%, #F8EFDE 0%, transparent 52%),
     linear-gradient(180deg,var(--bg) 0%, var(--bg-2) 100%);
   color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;min-height:100vh;
 }
 h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.01em}
-a{color:var(--aqua)}
+a{color:var(--accent)}
 .wrap{max-width:1280px;margin:0 auto;padding:26px 22px 80px}
- 
-header{position:relative;overflow:hidden;border:1px solid var(--line-soft);border-radius:var(--radius);padding:22px 24px;margin-bottom:22px;background:linear-gradient(120deg,#0c2a33 0%,#0a2129 60%,#0d2f38 100%)}
-header::before{content:"";position:absolute;inset:-40% -10% auto -10%;height:180%;background:repeating-linear-gradient(76deg, transparent 0 22px, rgba(63,224,208,.05) 22px 24px),repeating-linear-gradient(-72deg, transparent 0 30px, rgba(74,163,255,.045) 30px 32px);transform:translateX(0);animation:drift 22s linear infinite;pointer-events:none}
-@keyframes drift{to{transform:translateX(-46px)}}
+
+header{position:relative;overflow:hidden;border:1px solid var(--line);border-bottom:3px solid var(--accent);border-radius:var(--radius);padding:26px 28px 24px;margin-bottom:22px;background:var(--surface)}
 .brandline{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;position:relative}
-.wordmark{font-family:var(--mono);font-weight:700;font-size:26px;letter-spacing:.14em;color:var(--ink)}
-.wordmark b{color:var(--aqua)}
+.wordmark{font-family:var(--sans);font-weight:700;font-size:32px;letter-spacing:-.01em;color:var(--ink)}
+.wordmark b{color:var(--accent);font-weight:700}
 .tag{font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
-.subhead{position:relative;margin-top:8px;color:var(--ink-2);max-width:62ch;font-size:14px}
- 
+.subhead{position:relative;margin-top:8px;color:var(--ink-2);max-width:62ch;font-size:15px;font-style:italic}
+
 .grid{display:grid;grid-template-columns:388px 1fr;gap:22px;align-items:start}
 @media (max-width:940px){.grid{grid-template-columns:1fr}}
 .panel{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--radius)}
 .inputs{position:sticky;top:16px}
 @media (max-width:940px){.inputs{position:static}}
 .panel-head{display:flex;align-items:center;gap:10px;padding:15px 18px;border-bottom:1px solid var(--line-soft)}
-.panel-head .idx{font-family:var(--mono);font-size:11px;color:var(--aqua-dim);letter-spacing:.15em}
-.panel-head h2{font-size:14px;letter-spacing:.02em;text-transform:uppercase;font-weight:600;color:var(--ink)}
+.panel-head .idx{font-family:var(--mono);font-size:11px;color:var(--accent-dim);letter-spacing:.15em}
+.panel-head h2{font-family:var(--mono);font-size:14px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink)}
 .panel-head .note{margin-left:auto;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);letter-spacing:.06em}
 .panel-body{padding:16px 18px}
- 
+
 .field{margin-bottom:14px}
 .field:last-child{margin-bottom:0}
 label.lab{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin-bottom:6px}
 .hint{font-size:11.5px;color:var(--ink-3);margin-top:4px;font-family:var(--mono)}
 input[type=number],input[type=date],select{width:100%;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;color:var(--ink);font-family:var(--mono);font-size:15px;padding:9px 11px;outline:none;transition:border-color .15s, box-shadow .15s}
-input[type=number]:focus,input[type=date]:focus,select:focus{border-color:var(--aqua-dim);box-shadow:0 0 0 3px rgba(63,224,208,.13)}
+input[type=number]:focus,input[type=date]:focus,select:focus{border-color:var(--accent-dim);box-shadow:0 0 0 3px rgba(193,78,11,.13)}
 input[type=number]::-webkit-outer-spin-button,input[type=number]::-webkit-inner-spin-button{opacity:.4}
-input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.85);cursor:pointer}
+input[type=date]::-webkit-calendar-picker-indicator{cursor:pointer}
 select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 16px) 17px,calc(100% - 11px) 17px;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
- 
+
 .seg{display:flex;background:var(--bg-2);border:1px solid var(--line);border-radius:9px;padding:3px;gap:3px}
 .seg button{flex:1;background:transparent;border:0;color:var(--ink-2);font-family:var(--mono);font-size:12px;padding:7px 4px;border-radius:6px;cursor:pointer;letter-spacing:.03em;transition:.15s}
-.seg button.on{background:var(--surface-2);color:var(--aqua);box-shadow:inset 0 0 0 1px var(--line)}
+.seg button.on{background:var(--surface-2);color:var(--accent);box-shadow:inset 0 0 0 1px var(--line)}
 .seg button:hover:not(.on){color:var(--ink)}
- 
+
 .divider{height:1px;background:var(--line-soft);margin:16px 0}
 .mini-lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin:2px 0 10px;display:flex;align-items:center;gap:8px}
-.mini-lab .dot{width:6px;height:6px;border-radius:50%;background:var(--aqua-dim)}
+.mini-lab .dot{width:6px;height:6px;border-radius:50%;background:var(--accent-dim)}
 .volout{font-family:var(--mono);background:var(--bg-2);border:1px dashed var(--line);border-radius:9px;padding:10px 12px;display:flex;justify-content:space-between;align-items:baseline;margin-top:4px}
 .volout small{color:var(--ink-3);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-.volout b{color:var(--aqua);font-size:18px;font-weight:600}
- 
+.volout b{color:var(--accent);font-size:18px;font-weight:600}
+
 /* water sync slider */
 .verdict{padding:18px;border-bottom:1px solid var(--line-soft)}
 .swim-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:11px}
 .swim-title{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .swim-read{font-family:var(--mono);font-size:20px;font-weight:600}
-.swim-meter{position:relative;height:16px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(90deg,#cf7d6a 0%,#dc9a55 34%,#4fbfae 66%,var(--aqua) 100%)}
-.swim-needle{position:absolute;top:-4px;width:3px;height:24px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.6);transform:translateX(-50%)}
+.swim-meter{position:relative;height:16px;border-radius:10px;overflow:hidden;border:1px solid var(--line);background:linear-gradient(90deg,#C17A63 0%,#CBA157 34%,#8FAA8A 66%,var(--good) 100%)}
+.swim-needle{position:absolute;top:-4px;width:3px;height:24px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.35);transform:translateX(-50%)}
 .swim-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:6px}
- 
+
 /* LSI */
 .lsi-card{padding:18px}
 .lsi-top{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:14px;gap:16px;flex-wrap:wrap}
 .lsi-val{font-family:var(--mono);font-size:34px;font-weight:600;line-height:1}
 .lsi-lab{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.12em;margin-top:4px}
 .lsi-state{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap}
-.lsi-meter{position:relative;height:16px;border-radius:10px;overflow:hidden;background:linear-gradient(90deg,#2f6bd6 0%,#2f6bd6 22%,var(--aqua-dim) 40%,var(--aqua) 50%,var(--aqua-dim) 60%,#d65a4e 78%,#d65a4e 100%);border:1px solid var(--line)}
-.lsi-band{position:absolute;top:0;bottom:0;background:rgba(255,255,255,.10);border-left:1px dashed rgba(255,255,255,.35);border-right:1px dashed rgba(255,255,255,.35)}
-.lsi-needle{position:absolute;top:-4px;width:3px;height:24px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.6);transform:translateX(-50%)}
+.lsi-meter{position:relative;height:16px;border-radius:10px;overflow:hidden;background:linear-gradient(90deg,var(--low) 0%,var(--low) 22%,var(--good-dim) 40%,var(--good) 50%,var(--good-dim) 60%,var(--high) 78%,var(--high) 100%);border:1px solid var(--line)}
+.lsi-band{position:absolute;top:0;bottom:0;background:rgba(43,33,26,.10);border-left:1px dashed rgba(43,33,26,.35);border-right:1px dashed rgba(43,33,26,.35)}
+.lsi-needle{position:absolute;top:-4px;width:3px;height:24px;background:#fff;border-radius:2px;box-shadow:0 0 8px rgba(0,0,0,.35);transform:translateX(-50%)}
 .lsi-scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--ink-3);margin-top:6px}
 .lsi-note{margin-top:12px;font-size:13px;color:var(--ink-2)}
 .lsi-est{margin-top:8px;font-family:var(--mono);font-size:11px;color:var(--warn)}
- 
+
 /* gauges */
 .gauges{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px}
 @media (max-width:560px){.gauges{grid-template-columns:1fr}}
@@ -107,46 +107,46 @@ select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,va
 .gauge-read span{font-size:12px;color:var(--ink-3);font-weight:400;margin-left:3px}
 .gauge-ideal{font-family:var(--mono);font-size:11px;color:var(--ink-3);margin-top:3px}
 .gauge-ideal b{color:var(--ink-2);font-weight:500}
-.track{position:relative;height:10px;background:#0a2028;border:1px solid var(--line-soft);border-radius:6px;margin:11px 0 4px;overflow:hidden}
-.ideal{position:absolute;top:0;bottom:0;background:rgba(63,224,208,.16);border-left:1px solid rgba(63,224,208,.5);border-right:1px solid rgba(63,224,208,.5)}
-.marker{position:absolute;top:-3px;width:3px;height:16px;border-radius:2px;transform:translateX(-50%);box-shadow:0 0 6px rgba(0,0,0,.5)}
+.track{position:relative;height:10px;background:var(--surface-2);border:1px solid var(--line-soft);border-radius:6px;margin:11px 0 4px;overflow:hidden}
+.ideal{position:absolute;top:0;bottom:0;background:rgba(79,122,91,.14);border-left:1px solid rgba(79,122,91,.5);border-right:1px solid rgba(79,122,91,.5)}
+.marker{position:absolute;top:-3px;width:3px;height:16px;border-radius:2px;transform:translateX(-50%);box-shadow:0 0 6px rgba(0,0,0,.3)}
 .scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;color:var(--ink-3)}
 .gauge-fix{font-family:var(--mono);font-size:11px;margin-top:7px;min-height:1em;font-weight:500}
 .tempchip{background:var(--bg-2);border:1px solid var(--line-soft);border-radius:11px;padding:13px 14px;display:flex;flex-direction:column;justify-content:center}
 .tempchip .gauge-read{font-size:24px}
- 
+
 /* fix list */
 .dose-list{padding:8px 18px 18px}
 .dose{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid var(--line-soft)}
 .dose:last-child{border-bottom:0}
-.dose .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--aqua);font-weight:600}
+.dose .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--surface-2);border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:600}
 .dose .body{flex:1;min-width:0}
-.dose .title{font-weight:600;font-size:14.5px;margin-bottom:2px}
+.dose .title{font-weight:600;font-size:15px;margin-bottom:2px}
 .dose .title small{font-family:var(--mono);font-weight:400;color:var(--ink-3);font-size:12px;margin-left:6px}
-.dose .amt{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--aqua);letter-spacing:-.01em}
+.dose .amt{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent);letter-spacing:-.01em}
 .dose .amt small{font-size:12px;color:var(--ink-3);font-weight:400;letter-spacing:0}
-.dose .sub{font-size:12.5px;color:var(--ink-2);margin-top:4px}
+.dose .sub{font-size:13px;color:var(--ink-2);margin-top:4px}
 .allgood{padding:26px 18px;text-align:center;color:var(--ink-2)}
-.allgood .big{font-family:var(--mono);font-size:22px;color:var(--aqua);letter-spacing:.02em;margin-bottom:6px}
+.allgood .big{font-family:var(--mono);font-size:22px;color:var(--good);letter-spacing:.02em;margin-bottom:6px}
 .mode-note{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);padding:12px 18px 0}
- 
+
 /* analytics */
 .analytics{padding:8px 18px 18px}
 .insight{display:flex;gap:13px;padding:14px 0;border-bottom:1px solid var(--line-soft)}
 .insight:last-child{border-bottom:0}
 .insight .sev{flex:none;width:8px;height:8px;border-radius:50%;margin-top:6px}
 .insight .c{flex:1;min-width:0}
-.insight .h{font-weight:600;font-size:14px;margin-bottom:3px}
-.insight .b{font-size:13px;color:var(--ink-2);line-height:1.55}
- 
+.insight .h{font-weight:600;font-size:15px;margin-bottom:3px}
+.insight .b{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+
 /* history / trends */
 .hist-controls{display:flex;flex-direction:column;gap:12px}
 .hist-btns{display:flex;flex-wrap:wrap;gap:8px}
 .btn{font-family:var(--mono);font-size:12px;letter-spacing:.04em;background:var(--surface-2);border:1px solid var(--line);color:var(--ink);padding:9px 14px;border-radius:8px;cursor:pointer;transition:.15s;display:inline-flex;align-items:center;gap:6px}
-.btn:hover{border-color:var(--aqua-dim);color:var(--aqua)}
+.btn:hover{border-color:var(--accent-dim);color:var(--accent)}
 .btn.ghost{background:transparent;color:var(--ink-2)}
-.btn.primary{background:rgba(63,224,208,.14);border-color:rgba(63,224,208,.45);color:var(--aqua)}
-.btn.primary:hover{background:rgba(63,224,208,.2)}
+.btn.primary{background:rgba(193,78,11,.12);border-color:rgba(193,78,11,.4);color:var(--accent)}
+.btn.primary:hover{background:rgba(193,78,11,.18)}
 .file-btn input{display:none}
 .hist-note{font-size:11.5px;color:var(--ink-3);font-family:var(--mono);line-height:1.6}
 .hist-empty{padding:22px 4px;color:var(--ink-3);font-size:13px;font-family:var(--mono);text-align:center;border:1px dashed var(--line);border-radius:10px;margin-top:14px}
@@ -158,7 +158,7 @@ table.hist-table td{padding:7px 10px;border-bottom:1px solid var(--line-soft);co
 table.hist-table tr:last-child td{border-bottom:0}
 table.hist-table td.del{cursor:pointer;color:var(--ink-3);text-align:center}
 table.hist-table td.del:hover{color:var(--high)}
- 
+
 /* info cards */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
 @media (max-width:940px){.cards{grid-template-columns:1fr}}
@@ -167,39 +167,38 @@ table.hist-table td.del:hover{color:var(--high)}
 .kv .k{color:var(--ink-2)}
 .kv .v{font-family:var(--mono);color:var(--ink);text-align:right}
 .kv .v.flag{color:var(--high)}
-.kv .v.good{color:var(--aqua)}
-.relations{font-size:13px;color:var(--ink-2);line-height:1.65}
+.kv .v.good{color:var(--good)}
+.relations{font-size:13.5px;color:var(--ink-2);line-height:1.65}
 .relations .r{padding:9px 0;border-bottom:1px solid var(--line-soft);display:flex;gap:10px}
 .relations .r:last-child{border-bottom:0}
-.relations .r .ic{flex:none;font-family:var(--mono);color:var(--aqua-dim);font-size:12px;padding-top:2px}
+.relations .r .ic{flex:none;font-family:var(--mono);color:var(--accent-dim);font-size:12px;padding-top:2px}
 .relations b{color:var(--ink);font-weight:600}
-.safety li{margin-bottom:8px;font-size:13px;color:var(--ink-2)}
+.safety li{margin-bottom:8px;font-size:13.5px;color:var(--ink-2)}
 .safety b{color:var(--warn)}
 .footer-note{margin-top:26px;font-size:12px;color:var(--ink-3);font-family:var(--mono);line-height:1.7;border-top:1px solid var(--line-soft);padding-top:16px}
- 
+
 .hide{display:none !important}
-:focus-visible{outline:2px solid var(--aqua);outline-offset:2px}
-@media (prefers-reduced-motion:reduce){header::before{animation:none}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
 <div class="wrap">
- 
+
   <header>
     <div class="brandline">
-      <span class="wordmark">WATER<b>LINE</b></span>
+      <span class="wordmark">Water<b>line</b></span>
       <span class="tag">Pool Chemistry Console</span>
     </div>
     <p class="subhead">Enter your daily probe readings: pH, chlorine, ORP, and temp, for a quick read on what's going on and how to fix it. Switch to Full test when you've run the whole panel, and log readings over time to see how things are trending.</p>
   </header>
- 
+
   <div class="grid">
- 
+
     <!-- ============ INPUTS ============ -->
     <div class="panel inputs">
       <div class="panel-head"><span class="idx">IN</span><h2>Readings &amp; Setup</h2></div>
       <div class="panel-body">
- 
+
         <!-- VOLUME -->
         <div class="field">
           <label class="lab">Pool volume</label>
@@ -227,7 +226,7 @@ table.hist-table td.del:hover{color:var(--high)}
           </div>
           <div class="volout"><small>Computed volume</small><b id="vol_calc_out">gal</b></div>
         </div>
- 
+
         <div class="divider"></div>
         <div class="mini-lab"><span class="dot"></span>Setup</div>
         <div class="field">
@@ -247,7 +246,7 @@ table.hist-table td.del:hover{color:var(--high)}
             <option value="calhypo">Cal-hypo (granular)</option>
           </select>
         </div>
- 
+
         <div class="divider"></div>
         <div class="mini-lab"><span class="dot"></span>Test type</div>
         <div class="field">
@@ -257,7 +256,7 @@ table.hist-table td.del:hover{color:var(--high)}
           </div>
           <div class="hint">Daily = probe readings. Full = complete panel.</div>
         </div>
- 
+
         <!-- DAILY READINGS -->
         <div class="row2">
           <div class="field"><label class="lab">pH</label><input type="number" id="pH" value="6.9" step="0.1"></div>
@@ -267,7 +266,7 @@ table.hist-table td.del:hover{color:var(--high)}
           <div class="field"><label class="lab">ORP (mV)</label><input type="number" id="orp" value="720" step="5"><div class="hint">Sanitizer strength</div></div>
           <div class="field"><label class="lab">Water F</label><input type="number" id="temp" value="82" step="1"></div>
         </div>
- 
+
         <!-- ADVANCED READINGS -->
         <div id="adv-readings" class="hide">
           <div class="divider"></div>
@@ -285,13 +284,13 @@ table.hist-table td.del:hover{color:var(--high)}
             <div class="field"><label class="lab">TDS (ppm)</label><input type="number" id="tds" value="1000" step="100"></div>
           </div>
         </div>
- 
+
       </div>
     </div>
- 
+
     <!-- ============ DASHBOARD ============ -->
     <div>
- 
+
       <!-- 01 WATER STATUS -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">01</span><h2>Water Status</h2></div>
@@ -307,26 +306,26 @@ table.hist-table td.del:hover{color:var(--high)}
           <div class="lsi-est hide" id="lsi_est">Estimated from your last full-panel values. Run a Full test to refresh balance.</div>
         </div>
       </div>
- 
+
       <!-- 02 PARAMETER STATUS -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">02</span><h2>Parameter Status &amp; Ideal Ranges</h2></div>
         <div class="gauges" id="gauges"></div>
       </div>
- 
+
       <!-- 03 FIXES -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">03</span><h2>Get Back in Range</h2><span class="note" id="fix-order"></span></div>
         <div id="mode-note" class="mode-note hide"></div>
         <div id="dose-list" class="dose-list"></div>
       </div>
- 
+
       <!-- 04 ANALYTICS -->
       <div class="panel" style="margin-bottom:22px">
         <div class="panel-head"><span class="idx">04</span><h2>Advanced Analytics</h2><span class="note">likely root causes</span></div>
         <div class="analytics" id="analytics"></div>
       </div>
- 
+
       <!-- 05 TRENDS & HISTORY -->
       <div class="panel">
         <div class="panel-head"><span class="idx">05</span><h2>Trends &amp; History</h2><span class="note">import past tests to see how things are moving</span></div>
@@ -345,9 +344,9 @@ table.hist-table td.del:hover{color:var(--high)}
             </div>
             <div class="hist-note">Logging saves whatever is currently in the Readings panel, tagged with this date. Logging again on the same date updates that entry instead of duplicating it. CSV columns: date, pH, fc, orp, ta, ch, cya, salt, tds, cc, temp. Any subset works, and this is also the format Export CSV produces, so exporting and re-importing later is how your log carries over between sessions.</div>
           </div>
- 
+
           <div id="hist_empty" class="hist-empty">No history yet. Log today's reading, import a CSV of past tests, or load sample data to see how this section works.</div>
- 
+
           <div id="hist_content" class="hide">
             <div class="field" style="max-width:260px;margin-top:16px">
               <label class="lab">Chart metric</label>
@@ -361,18 +360,18 @@ table.hist-table td.del:hover{color:var(--high)}
               </select>
             </div>
             <div id="hist_chart_wrap" style="margin-top:14px"></div>
- 
+
             <div class="divider"></div>
             <div class="mini-lab"><span class="dot"></span>Trend notes</div>
             <div id="hist_insights" class="analytics" style="padding:0"></div>
- 
+
             <div class="divider"></div>
             <div class="mini-lab"><span class="dot"></span>Log (<span id="hist_count">0</span> entries)</div>
             <div class="hist-table-wrap"><table class="hist-table" id="hist_table"></table></div>
           </div>
         </div>
       </div>
- 
+
       <!-- INFO CARDS -->
       <div class="cards">
         <div class="panel">
@@ -391,7 +390,7 @@ table.hist-table td.del:hover{color:var(--high)}
           </div>
         </div>
       </div>
- 
+
       <!-- SAFETY -->
       <div class="panel" style="margin-top:22px">
         <div class="panel-head"><span class="idx">08</span><h2>Handling rules</h2></div>
@@ -404,21 +403,21 @@ table.hist-table td.del:hover{color:var(--high)}
           </ul>
         </div>
       </div>
- 
+
       <div class="footer-note" id="foot"></div>
     </div>
   </div>
 </div>
- 
+
 <script>
 "use strict";
 const $ = id => document.getElementById(id);
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 const num=id=>{const v=parseFloat($(id).value);return isFinite(v)?v:0;};
 const fmt=(n,d=0)=>n.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});
- 
+
 let volMode='enter', location_='outdoor', readMode='daily', history=[];
- 
+
 const HIST_KEYS=['pH','fc','orp','ta','ch','cya','salt','tds','cc','temp'];
 const METRIC_META={
   fc:{label:'Free Chlorine',unit:'ppm',dp:1},
@@ -429,7 +428,7 @@ const METRIC_META={
   cya:{label:'Cyanuric Acid',unit:'ppm',dp:0}
 };
 const SYNC_W={fc:0.30,pH:0.25,orp:0.15,ta:0.10,ch:0.10,cya:0.10};
- 
+
 function computeVolume(){
   let gal;
   if(volMode==='enter'){gal=num('vol_gal');}
@@ -442,7 +441,7 @@ function computeVolume(){
   }
   return Math.max(gal,100);
 }
- 
+
 function ranges(cya,sanitizer,surface,loc){
   const R={};
   R.pH={min:7.4,max:7.6,target:7.5,scale:[6.8,8.2],unit:'',dp:1};
@@ -462,7 +461,7 @@ function ranges(cya,sanitizer,surface,loc){
   R.salt={min:2700,max:3400,target:3200,scale:[0,5000],unit:'ppm',dp:0};
   return R;
 }
- 
+
 function lsi(pH,tempF,ch,ta,cya,tds){
   const tempC=(tempF-32)*5/9;
   const A=(Math.log10(Math.max(tds,50))-1)/10;
@@ -473,7 +472,7 @@ function lsi(pH,tempF,ch,ta,cya,tds){
   const D=Math.log10(carbAlk);
   return pH-(9.3+A+B-C-D);
 }
- 
+
 function paramScore(val,r){
   const width=(r.max-r.min)||1;
   if(val>=r.min && val<=r.max) return 100;
@@ -481,12 +480,12 @@ function paramScore(val,r){
   const dist = val<r.min ? (r.min-val) : (val-r.max);
   return clamp(100-(dist/width)*100,0,100);
 }
- 
+
 function dry(oz){if(oz<0.4)return'a pinch';if(oz>=16)return fmt(oz/16,oz/16<10?2:1)+' lb';return fmt(oz,1)+' oz';}
 function drySub(oz){return oz>=16?fmt(oz,0)+' oz total':'';}
 function liq(f){if(f<0.5)return'a splash';if(f>=128)return fmt(f/128,2)+' gal';if(f>=32)return fmt(f/32,1)+' qt';if(f>=8)return fmt(f/8,1)+' cups';return fmt(f,1)+' fl oz';}
 function liqSub(f){return f>=8?fmt(f,0)+' fl oz total':'';}
- 
+
 function gaugeHTML(name,val,r){
   const [lo,hi]=r.scale, pos=v=>clamp((v-lo)/(hi-lo)*100,0,100);
   const mk=pos(val),bandL=pos(r.min),bandR=pos(r.max);
@@ -496,11 +495,11 @@ function gaugeHTML(name,val,r){
   else if(val<r.min){state='LOW';color='var(--low)';fix='raise';fixcol='var(--low)';}
   else if(val>r.max){ if(r.highIsOk){state='HIGH';color='var(--warn)';fix='strong oxidation, generally fine';fixcol='var(--ink-3)';}
     else{state='HIGH';color='var(--high)';fix='lower';fixcol='var(--high)';} }
-  else{state='OK';color='var(--aqua)';fix='in range';fixcol='var(--aqua-dim)';}
-  const ps=color==='var(--aqua)'?'color:var(--aqua);border-color:rgba(63,224,208,.4);background:rgba(63,224,208,.08)'
-    :(color==='var(--low)'?'color:var(--low);border-color:rgba(74,163,255,.4);background:rgba(74,163,255,.08)'
-    :(color==='var(--warn)'?'color:var(--warn);border-color:rgba(255,176,32,.4);background:rgba(255,176,32,.08)'
-    :'color:var(--high);border-color:rgba(255,107,107,.4);background:rgba(255,107,107,.08)'));
+  else{state='OK';color='var(--good)';fix='in range';fixcol='var(--good-dim)';}
+  const ps=color==='var(--good)'?'color:var(--good);border-color:rgba(79,122,91,.5);background:rgba(79,122,91,.12)'
+    :(color==='var(--low)'?'color:var(--low);border-color:rgba(91,122,153,.5);background:rgba(91,122,153,.12)'
+    :(color==='var(--warn)'?'color:var(--warn);border-color:rgba(184,134,11,.5);background:rgba(184,134,11,.12)'
+    :'color:var(--high);border-color:rgba(178,58,46,.5);background:rgba(178,58,46,.12)'));
   return `<div class="gauge">
     <div class="gauge-top"><span class="gauge-name">${name}</span><span class="pill" style="${ps}">${state}</span></div>
     <div class="gauge-read" style="color:${color}">${fmt(val,r.dp)}<span>${r.unit}</span></div>
@@ -511,7 +510,7 @@ function gaugeHTML(name,val,r){
   </div>`;
 }
 function tempCard(t){return `<div class="tempchip"><span class="gauge-name">Water Temp</span><div class="gauge-read">${fmt(t,0)}<span>F</span></div><div class="gauge-ideal">Drives the balance calculation</div></div>`;}
- 
+
 function update(){
   const gal=computeVolume(),V=gal/10000;
   $('vol_liters').textContent='approx '+fmt(gal*3.78541,0)+' L';
@@ -521,7 +520,7 @@ function update(){
   const isSalt=sanitizer==='salt', full=readMode==='full';
   $('salt-field').classList.toggle('hide',!isSalt);
   const R=ranges(cya,sanitizer,surface,location_);
- 
+
   /* ---- water sync slider ---- */
   const avail={};
   avail.fc=paramScore(fc,R.fc);
@@ -532,11 +531,11 @@ function update(){
   Object.keys(avail).forEach(k=>{wsum+=SYNC_W[k];ssum+=SYNC_W[k]*avail[k];});
   const syncPct=wsum?ssum/wsum:100;
   let syncLabel,swimColor;
-  if(syncPct>=90){syncLabel='In sync';swimColor='var(--aqua)';}
-  else if(syncPct>=75){syncLabel='Mostly in sync';swimColor='var(--aqua-dim)';}
+  if(syncPct>=90){syncLabel='In sync';swimColor='var(--good)';}
+  else if(syncPct>=75){syncLabel='Mostly in sync';swimColor='var(--good-dim)';}
   else if(syncPct>=55){syncLabel='Slightly out of sync';swimColor='var(--warn)';}
-  else if(syncPct>=30){syncLabel='Out of sync';swimColor='#dc9a55';}
-  else {syncLabel='Well out of sync';swimColor='#cf7d6a';}
+  else if(syncPct>=30){syncLabel='Out of sync';swimColor='#B8813F';}
+  else {syncLabel='Well out of sync';swimColor='#A8503F';}
   const factors=[];
   if(fc<R.fc.hardMin) factors.push('free chlorine is low enough that the water is not really sanitizing yet');
   else if(fc<R.fc.target-0.2) factors.push('free chlorine is a bit under target');
@@ -552,7 +551,7 @@ function update(){
     <div class="swim-meter"><div class="swim-needle" id="swim_needle" style="left:${clamp(syncPct,0,100)}%"></div></div>
     <div class="swim-scale"><span>Out of sync</span><span>In sync</span></div>
     <div class="lsi-note">${note}</div>`;
- 
+
   /* ---- LSI ---- */
   const L=lsi(pH,temp,ch,ta,cya,tds);
   $('lsi_val').textContent=(L>=0?'+':'')+L.toFixed(2);
@@ -562,17 +561,17 @@ function update(){
   let ls,lc,ln;
   if(L<-0.3){ls='CORROSIVE';lc='var(--low)';ln='Aggressive water. It pulls calcium from plaster, grout and metal. Raise calcium, alkalinity or pH toward zero.';}
   else if(L>0.3){ls='SCALING';lc='var(--high)';ln='Scale-forming. Expect deposits on tile and inside the heater. Lower pH or alkalinity toward zero.';}
-  else{ls='BALANCED';lc='var(--aqua)';ln='In balance, neither corrosive nor scale-forming. Hold pH, alkalinity, calcium and temperature steady.';}
+  else{ls='BALANCED';lc='var(--good)';ln='In balance, neither corrosive nor scale-forming. Hold pH, alkalinity, calcium and temperature steady.';}
   const st=$('lsi_state');st.textContent=ls;st.style.color=lc;st.style.borderColor=lc;
   $('lsi_val').style.color=lc;$('lsi_note').textContent=ln;
   $('lsi_est').classList.toggle('hide',full);
- 
+
   /* ---- gauges ---- */
   const g=[gaugeHTML('Free Chlorine',fc,R.fc),gaugeHTML('pH',pH,R.pH),gaugeHTML('ORP',orp,R.orp)];
   if(full){g.push(gaugeHTML('Total Alkalinity',ta,R.ta),gaugeHTML('Calcium Hardness',ch,R.ch),gaugeHTML('Cyanuric Acid',cya,R.cya));if(isSalt)g.push(gaugeHTML('Salt',salt,R.salt));}
   g.push(tempCard(temp));
   $('gauges').innerHTML=g.join('');
- 
+
   /* ---- fixes ---- */
   const steps=[];
   function phStep(){
@@ -598,18 +597,18 @@ function update(){
       else if(salt>R.salt.max+100){steps.push({t:'Lower salt',now:'now '+fmt(salt,0),amt:'Dilute',sub:'',note:'Salt only drops by replacing water.'});}}
     fcStep();
   } else { phStep(); fcStep(); }
- 
+
   $('fix-order').textContent=full?'order: alkalinity, pH, calcium, stabilizer, chlorine':'daily: pH, chlorine';
   $('mode-note').classList.toggle('hide',full);
   if(!full)$('mode-note').textContent='Showing daily fixes only. Switch to Full test to balance alkalinity, calcium and stabilizer.';
   const dl=$('dose-list');
   if(steps.length===0){dl.innerHTML=`<div class="allgood"><div class="big">Nothing to add</div>${full?'Every parameter is in range for this setup.':'pH and chlorine are in range. Keep testing daily.'}</div>`;}
   else{dl.innerHTML=steps.map((s,i)=>`<div class="dose"><div class="num">${i+1}</div><div class="body"><div class="title">${s.t}<small>${s.now}</small></div><div class="amt">${s.amt}${s.sub?` <small>(${s.sub})</small>`:''}</div><div class="sub">${s.note}</div></div></div>`).join('');}
- 
+
   /* ---- analytics ---- */
   const ins=[];
   const add=(sev,h,b)=>ins.push({sev,h,b});
-  const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--aqua-dim)'};
+  const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--good-dim)'};
   if(fc<R.fc.hardMin) add('high','Not sanitizing right now','Free chlorine is below the safe minimum. Add sodium hypochlorite and keep swimmers out until it recovers. Nothing else you balance matters much while the pool is unprotected.');
   if(orp>0&&orp>=650&&fc<R.fc.hardMin&&pH<7.2)
     add('high','ORP looks fine but it is misleading','Your ORP reads healthy while free chlorine is near zero. The low pH ('+fmt(pH,1)+') is inflating the ORP. More of your chlorine is in its active form, so the probe sees strong oxidation from very little sanitizer. Raise pH first, then chlorinate. ORP will settle to its true level and you will hold a real reserve.');
@@ -636,7 +635,7 @@ function update(){
   const order={high:0,med:1,info:2};
   ins.sort((a,b)=>order[a.sev]-order[b.sev]);
   $('analytics').innerHTML=ins.slice(0,7).map(x=>`<div class="insight"><div class="sev" style="background:${sevCol[x.sev]}"></div><div class="c"><div class="h">${x.h}</div><div class="b">${x.b}</div></div></div>`).join('');
- 
+
   /* ---- FC/CYA + shock ---- */
   const minFC=R.fc.hardMin,tgtFC=R.fc.target;
   const slam=cya>=25?Math.round(0.4*cya):10;
@@ -652,15 +651,15 @@ function update(){
     <div class="kv"><span class="k">Sodium hypochlorite (12.5%)</span><span class="v">${liq(10.7*Math.max(shockTo-fc,0)*V)}</span></div>
     <div class="kv"><span class="k">Or cal-hypo (73%)</span><span class="v">${dry(2.0*Math.max(shockTo-fc,0)*V)}</span></div>
     <div style="font-size:12px;color:var(--ink-3);margin-top:12px;line-height:1.6">Hold free chlorine near <b style="color:var(--ink-2)">7.5% of CYA</b>. Shock when combined chlorine is 0.5 ppm or higher, after algae, or heavy use, and hold the shock level until it clears overnight.</div>`;
- 
+
   $('foot').innerHTML=`MODE ${full?'full panel':'daily'} | VOL ${fmt(gal,0)} gal | V ${V.toFixed(2)} | LSI ${(L>=0?'+':'')+L.toFixed(2)} | ORP ${fmt(orp,0)} mV<br>Doses are estimates per standard field references (Pool &amp; Hot Tub Alliance / NSPF tables). ORP is diagnostic. You correct it by fixing pH and free chlorine, not by dosing it directly. Test with a fresh kit, dose in order, retest before adding more.`;
- 
+
   renderHistory();
 }
- 
+
 /* ---------- history / trends ---------- */
 function todayStr(){const d=new Date();const off=d.getTimezoneOffset();const local=new Date(d.getTime()-off*60000);return local.toISOString().slice(0,10);}
- 
+
 function upsertHistory(entry){
   if(!entry||!entry.date) return;
   const i=history.findIndex(h=>h.date===entry.date);
@@ -668,7 +667,7 @@ function upsertHistory(entry){
   else history.push(entry);
   history.sort((a,b)=>a.date.localeCompare(b.date));
 }
- 
+
 function parseCSV(text){
   const lines=text.split(/\r?\n/).filter(l=>l.trim().length);
   if(lines.length<2) return [];
@@ -689,7 +688,7 @@ function parseCSV(text){
   }
   return out;
 }
- 
+
 function renderHistory(){
   $('hist_count').textContent=history.length;
   $('hist_empty').classList.toggle('hide',history.length>0);
@@ -699,7 +698,7 @@ function renderHistory(){
   drawInsights();
   drawTable();
 }
- 
+
 function drawChart(){
   const metric=$('hist_metric').value;
   const meta=METRIC_META[metric];
@@ -724,24 +723,24 @@ function drawChart(){
   const yOf=v=> PAD_T + plotH - clamp((v-lo)/(hi-lo),0,1)*plotH;
   const bandTop=yOf(rr.max), bandBot=yOf(rr.min);
   const path=pts.map((p,i)=>(i===0?'M':'L')+xOf(p.t).toFixed(1)+' '+yOf(p.v).toFixed(1)).join(' ');
-  const dots=pts.map(p=>`<circle cx="${xOf(p.t).toFixed(1)}" cy="${yOf(p.v).toFixed(1)}" r="3.4" style="fill:var(--aqua);stroke:var(--bg-2);stroke-width:1.5"><title>${p.date}: ${fmt(p.v,meta.dp)} ${meta.unit}</title></circle>`).join('');
+  const dots=pts.map(p=>`<circle cx="${xOf(p.t).toFixed(1)}" cy="${yOf(p.v).toFixed(1)}" r="3.4" style="fill:var(--accent);stroke:var(--surface);stroke-width:1.5"><title>${p.date}: ${fmt(p.v,meta.dp)} ${meta.unit}</title></circle>`).join('');
   const gridY=[lo,(lo+hi)/2,hi];
   const gridLines=gridY.map(v=>`<line x1="${PAD_L}" x2="${W-PAD_R}" y1="${yOf(v).toFixed(1)}" y2="${yOf(v).toFixed(1)}" style="stroke:var(--line-soft);stroke-width:1"/><text x="${PAD_L-6}" y="${(yOf(v)+3).toFixed(1)}" text-anchor="end" style="font-family:var(--mono);font-size:9.5px;fill:var(--ink-3)">${fmt(v,meta.dp)}</text>`).join('');
   const xLabels=[pts[0],pts[pts.length-1]].map((p,i)=>`<text x="${xOf(p.t).toFixed(1)}" y="${H-8}" text-anchor="${i===0?'start':'end'}" style="font-family:var(--mono);font-size:9.5px;fill:var(--ink-3)">${p.date}</text>`).join('');
   wrap.innerHTML=`<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;display:block">
-    <rect x="${PAD_L}" y="${bandTop.toFixed(1)}" width="${plotW}" height="${Math.max(0,bandBot-bandTop).toFixed(1)}" style="fill:rgba(63,224,208,.10);stroke:rgba(63,224,208,.35);stroke-dasharray:3 3"/>
+    <rect x="${PAD_L}" y="${bandTop.toFixed(1)}" width="${plotW}" height="${Math.max(0,bandBot-bandTop).toFixed(1)}" style="fill:rgba(79,122,91,.12);stroke:rgba(79,122,91,.4);stroke-dasharray:3 3"/>
     ${gridLines}
-    <path d="${path}" style="fill:none;stroke:var(--aqua);stroke-width:2"/>
+    <path d="${path}" style="fill:none;stroke:var(--accent);stroke-width:2"/>
     ${dots}
     ${xLabels}
   </svg>
   <div class="hist-note">Shaded band is the current ideal range for ${meta.label}, ${fmt(rr.min,meta.dp)} to ${fmt(rr.max,meta.dp)} ${meta.unit}, based on your current setup rather than what was set up on each past date. Hover a point to see its exact reading and date.</div>`;
 }
- 
+
 function drawInsights(){
   const box=$('hist_insights');
   if(history.length<3){
-    box.innerHTML=`<div class="insight"><div class="sev" style="background:var(--aqua-dim)"></div><div class="c"><div class="h">Not enough history yet</div><div class="b">Log a few more tests, at least 3, and trend notes will start showing up here.</div></div></div>`;
+    box.innerHTML=`<div class="insight"><div class="sev" style="background:var(--good-dim)"></div><div class="c"><div class="h">Not enough history yet</div><div class="b">Log a few more tests, at least 3, and trend notes will start showing up here.</div></div></div>`;
     return;
   }
   const sanitizer=$('sanitizer').value, surface=$('surface').value;
@@ -785,10 +784,10 @@ function drawInsights(){
   if(items.length===0){
     items.push({sev:'info',h:'Chemistry has been fairly steady',b:'Nothing stands out across your logged tests. Keep up the same routine.'});
   }
-  const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--aqua-dim)'};
+  const sevCol={high:'var(--high)',med:'var(--warn)',info:'var(--good-dim)'};
   box.innerHTML=items.map(x=>`<div class="insight"><div class="sev" style="background:${sevCol[x.sev]}"></div><div class="c"><div class="h">${x.h}</div><div class="b">${x.b}</div></div></div>`).join('');
 }
- 
+
 function drawTable(){
   const cols=['date','pH','fc','orp','ta','ch','cya','temp'];
   const labelMap={date:'Date',pH:'pH',fc:'FC',orp:'ORP',ta:'TA',ch:'CH',cya:'CYA',temp:'F'};
@@ -803,14 +802,14 @@ function drawTable(){
     history=history.filter(h=>h.date!==el.dataset.date); renderHistory();
   }));
 }
- 
+
 /* wiring */
 document.querySelectorAll('#volmode button').forEach(b=>b.addEventListener('click',()=>{volMode=b.dataset.vm;document.querySelectorAll('#volmode button').forEach(x=>x.classList.toggle('on',x===b));$('vol-enter').classList.toggle('hide',volMode!=='enter');$('vol-calc').classList.toggle('hide',volMode!=='calc');update();}));
 document.querySelectorAll('#loc button').forEach(b=>b.addEventListener('click',()=>{location_=b.dataset.loc;document.querySelectorAll('#loc button').forEach(x=>x.classList.toggle('on',x===b));update();}));
 document.querySelectorAll('#readmode button').forEach(b=>b.addEventListener('click',()=>{readMode=b.dataset.rm;document.querySelectorAll('#readmode button').forEach(x=>x.classList.toggle('on',x===b));$('adv-readings').classList.toggle('hide',readMode!=='full');update();}));
 $('shape').addEventListener('change',()=>{const round=$('shape').value==='round';$('dimA_l').textContent=round?'Diameter (ft)':'Length (ft)';$('dimB_wrap').style.display=round?'none':'block';update();});
 ['vol_gal','dimA','dimB','depthS','depthD','surface','sanitizer','pH','fc','orp','temp','ta','ch','cya','salt','tds','cc'].forEach(id=>$(id).addEventListener('input',update));
- 
+
 $('hist_log').addEventListener('click',()=>{
   const date=$('hist_date').value||todayStr();
   const entry={date,pH:num('pH'),fc:num('fc'),temp:num('temp')};
@@ -870,10 +869,9 @@ $('hist_sample').addEventListener('click',()=>{
   renderHistory();
 });
 $('hist_metric').addEventListener('change',drawChart);
- 
+
 $('hist_date').value=todayStr();
 update();
 </script>
 </body>
 </html>
- 
