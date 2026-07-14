@@ -36,23 +36,3 @@ Type in gallons directly, or use the built-in calculator to estimate volume from
 ## Tech
 
 Plain HTML, CSS, and JavaScript. No frameworks, no build step, no dependencies beyond a Google Font. Runs entirely in your browser. Nothing gets sent anywhere or saved.
-
-## Deployment
-
-This is a static file, so any static host works. Easiest options:
-
-**GitHub Pages**
-1. Rename the file to `index.html` and place it at the repo root (or in `/docs` if you set that as your Pages source).
-2. Repo → **Settings → Pages** → Source: `Deploy from a branch`, Branch: `main`, Folder: `/ (root)`.
-3. Site goes live at `https://<username>.github.io/<reponame>/` within a minute or two.
-
-**Netlify / Vercel / Cloudflare Pages**
-Drag and drop the HTML file onto Netlify Drop, run `vercel deploy`, or use Cloudflare Pages' upload flow. No configuration needed.
-
-## Disclaimer
-
-Dosing figures are estimates based on standard field references and assume a well-mixed pool with accurate test readings. Always test with a fresh kit, dose one chemical at a time with circulation running, and retest before adding more. This tool is not a substitute for a certified pool operator on commercial or public water.
-
-## License
-
-MIT. Use it, fork it, adapt it.
